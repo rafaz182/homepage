@@ -1,3 +1,4 @@
 body {
-    background-image: url("static/image/wallhaven-6qle5q.jpg");
+    background-color: #111;
+    background: url('../images/wallhaven-6qle5q.jpg');
 }
