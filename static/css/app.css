@@ -1,4 +1,19 @@
 body {
     background-color: #111;
     background: url('../images/wallhaven-6qle5q.jpg');
+    background-size: cover;
+}
+
+@font-face {
+    font-family: 'Jack';
+    src: url('../font/jack_input.TTF');
+  }
+
+h1 {
+    color: white;
+    letter-spacing: 25px;
+    word-spacing: 8px;
+    font-family: Jack;
+    font-size: 75px;
+    text-transform: uppercase;
 }
