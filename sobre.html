@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rafael Ramos — Homepage</title>
-  <meta name="description" content="Senior Android Developer (Kotlin/Java). Carreira, blog e sobre." />
+  <title>Sobre — Rafael Ramos</title>
+  <meta name="description" content="Resumo profissional, interesses e contato." />
   <link rel="icon" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/style.css" />
   <script>
-    // Set theme early (prevents flash)
     (function(){
       const k="rafaz_theme";
       const s=localStorage.getItem(k);
@@ -22,7 +21,7 @@
     <div class="wrap">
       <div class="pill" style="gap:10px;">
         <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
-        <span style="font-family:var(--mono);color:var(--muted);">/home</span>
+        <span style="font-family:var(--mono);color:var(--muted);">/sobre</span>
       </div>
       <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
     </div>
@@ -57,64 +56,60 @@
 
     <main class="main">
       <div class="card">
-        <h2 class="h1">Rafael Ramos</h2>
-        <p class="sub">
-          Senior Android Developer (Kotlin/Java). Arquitetura, UI complexa, performance de build e liderança técnica.
-        </p>
+        <p class="sectionTitle">Sobre</p>
+        <h2 class="h1" style="font-size:36px;margin-bottom:6px;">whoami</h2>
+
+        <div class="tile" style="margin-top:14px;">
+          <div class="t">profile</div>
+          <p class="d" style="margin:0;color:var(--text);">
+            Software engineer com mais de oito anos de experiência focada em apps mobile.
+            Atuei em diferentes indústrias (e-commerce, banking e soluções customizadas),
+            com foco em criar novas ideias e entregar acima do esperado.
+          </p>
+          <p class="d" style="margin:10px 0 0;color:var(--muted);">
+            Interesses: Design Patterns, Concurrency e Code Architecture. Também atuo com liderança,
+            colaborando com back-end/front-end e times de negócio para alinhar requisitos e qualidade de entrega.
+          </p>
+        </div>
 
         <div class="grid2">
           <div class="tile">
-            <div class="t">snapshot</div>
-            <p class="k" style="margin:0;">8+ anos em mobile</p>
-            <p class="d">Experiência em bancos, varejo e soluções sob medida.</p>
+            <div class="t">strengths</div>
+            <p class="d" style="margin:0;">
+              UI complexa (estados, listas interativas), search/filter/sort no client-side,
+              notificações e deep links, caching (memória/armazenamento) e componentes custom.
+            </p>
           </div>
-
           <div class="tile">
-            <div class="t">agora</div>
-            <p class="k" style="margin:0;">Liderança e arquitetura</p>
-            <p class="d">Gestão de time e entrega de features (notifications, deep links, analytics).</p>
+            <div class="t">languages</div>
+            <p class="d" style="margin:0;">Português: nativo • Inglês: full professional</p>
           </div>
         </div>
 
-        <div class="gridCards" style="margin-top:14px;">
-          <a class="tile" href="carreira.html">
-            <div class="t">go</div>
-            <h3 class="k">Carreira</h3>
-            <p class="d">Timeline, impacto e stack por empresa.</p>
-          </a>
-
-          <a class="tile" href="blog.html">
-            <div class="t">read</div>
-            <h3 class="k">Blog</h3>
-            <p class="d">Posts e anotações (setup pronto).</p>
-          </a>
-
-          <a class="tile" href="sobre.html">
-            <div class="t">whoami</div>
-            <h3 class="k">Sobre</h3>
-            <p class="d">Resumo, interesses e contato.</p>
-          </a>
+        <div class="tile" style="margin-top:16px;">
+          <div class="t">contact</div>
+          <p class="d" style="margin:0;">
+            email: <a href="mailto:raha148@hotmail.com">raha148@hotmail.com</a><br/>
+            linkedin: <a href="https://www.linkedin.com/in/rafaz-dev" rel="noreferrer">linkedin.com/in/rafaz-dev</a><br/>
+            github: <a href="https://github.com/rafaz182" rel="noreferrer">github.com/rafaz182</a>
+          </p>
         </div>
 
         <div class="statusbar" role="status" aria-label="Barra de status">
-          <span><b>status</b>: online</span>
+          <span><b>status</b>: /sobre</span>
           <span><b>last</b>: <span data-status-last>—</span></span>
           <span><b>tz</b>: <span data-status-tz>—</span></span>
-          <span><b>stack</b>: Kotlin • Android • Compose</span>
           <span><b>theme</b>: <span data-status-theme>dark</span></span>
         </div>
 
         <div class="footer">
-          <span>© <span id="y"></span> rafaz.dev</span>
-          <span style="color:var(--muted);">personal homepage / portfolio</span>
+          <a href="index.html">cd ..</a>
+          <span style="color:var(--muted);">stack: Kotlin • Android • Architecture</span>
         </div>
       </div>
     </main>
   </div>
 
   <script src="assets/main.js"></script>
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
