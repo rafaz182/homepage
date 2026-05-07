@@ -1,126 +1,209 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sobre — Rafael Ramos</title>
-  <meta name="description" content="Resumo profissional, interesses e contato." />
-
-  <!-- SEO -->
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph (preview social) -->
-  <meta property="og:title" content="Rafael Ramos — Android Consultant">
-  <meta property="og:description" content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rafaz.dev/sobre.html">
-  <meta property="og:image" content="https://rafaz.dev/assets/preview.png">
-
-  <link rel="icon" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script>
-    (function(){
-      const k="rafaz_theme";
-      const s=localStorage.getItem(k);
-      const p=window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark":"light";
-      document.documentElement.setAttribute("data-theme", (s==="dark"||s==="light")?s:p);
-    })();
-  </script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sobre — Rafael Ramos</title>
+<meta name="description" content="Resumo profissional, interesses e contato." />
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Rafael Ramos — Android Consultant">
+<meta property="og:description" content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rafaz.dev/sobre.html">
+<meta property="og:image" content="https://rafaz.dev/assets/preview.png">
+<link rel="icon" href="assets/favicon.svg" />
+<link rel="stylesheet" href="assets/style.css" />
+<script>
+(function(){
+  const k = "rafaz_theme";
+  const s = localStorage.getItem(k);
+  const p = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", (s === "dark" || s === "light") ? s : p);
+})();
+</script>
 </head>
 <body>
-  <div class="topbarMobile">
-    <div class="wrap">
-      <div class="pill" style="gap:10px;">
-        <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
-        <span style="font-family:var(--mono);color:var(--muted);">/sobre</span>
+
+<div class="topbarMobile">
+  <div class="wrap">
+    <div class="pill" style="gap:10px;">
+      <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
+      <span style="font-family:var(--mono);color:var(--muted);">/sobre</span>
+    </div>
+    <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
+  </div>
+</div>
+
+<div class="container">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true">&gt;_</div>
+      <div>
+        <h1 id="sidebar-name">Rafael Ramos</h1>
+        <p id="sidebar-subtitle">Senior Android • Kotlin/Java • SP</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Navegação">
+      <a data-nav href="index.html">Início <span>00</span></a>
+      <a data-nav href="carreira.html">Carreira <span>01</span></a>
+      <a data-nav href="blog.html">Blog <span>02</span></a>
+      <a data-nav href="sobre.html">Sobre <span>03</span></a>
+    </nav>
+    <div class="sidebarFooter">
+      <div class="kbdRow">
+        <div class="row"><span>email</span><a id="sidebar-email" href="#">—</a></div>
+        <div class="row"><span>linkedin</span><a id="sidebar-linkedin" href="#" rel="noreferrer">—</a></div>
+        <div class="row"><span>github</span><a id="sidebar-github" href="#" rel="noreferrer">—</a></div>
       </div>
       <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
     </div>
-  </div>
+  </aside>
 
-  <div class="container">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="avatar" aria-hidden="true">&gt;_</div>
-        <div>
-          <h1>Rafael Ramos</h1>
-          <p>Senior Android • Kotlin/Java • SP</p>
+  <main class="main">
+    <div class="card">
+      <p class="sectionTitle">Sobre</p>
+      <h2 class="h1" style="font-size:36px;margin-bottom:6px;">whoami</h2>
+
+      <div class="tile" style="margin-top:14px;">
+        <div class="t">profile</div>
+        <p class="d" id="bio-main" style="margin:0;color:var(--text);">—</p>
+        <p class="d" id="bio-interests" style="margin:10px 0 0;color:var(--muted);">—</p>
+      </div>
+
+      <div class="grid2">
+        <div class="tile">
+          <div class="t">strengths</div>
+          <p class="d" id="strengths" style="margin:0;">—</p>
+        </div>
+        <div class="tile">
+          <div class="t">languages</div>
+          <p class="d" id="spoken-languages" style="margin:0;">—</p>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Navegação">
-        <a data-nav href="index.html">Início <span>00</span></a>
-        <a data-nav href="carreira.html">Carreira <span>01</span></a>
-        <a data-nav href="blog.html">Blog <span>02</span></a>
-        <a data-nav href="sobre.html">Sobre <span>03</span></a>
-      </nav>
-
-      <div class="sidebarFooter">
-        <div class="kbdRow">
-          <div class="row"><span>email</span><a href="mailto:raha148@hotmail.com">raha148@hotmail.com</a></div>
-          <div class="row"><span>linkedin</span><a href="https://www.linkedin.com/in/rafaz-dev" rel="noreferrer">/in/rafaz-dev</a></div>
-          <div class="row"><span>github</span><a href="https://github.com/rafaz182" rel="noreferrer">/rafaz182</a></div>
-        </div>
-        <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
+      <div class="tile" style="margin-top:16px;">
+        <div class="t">stack</div>
+        <div id="skills-block" style="margin:0;">—</div>
       </div>
-    </aside>
 
-    <main class="main">
-      <div class="card">
-        <p class="sectionTitle">Sobre</p>
-        <h2 class="h1" style="font-size:36px;margin-bottom:6px;">whoami</h2>
-
-        <div class="tile" style="margin-top:14px;">
-          <div class="t">profile</div>
-          <p class="d" style="margin:0;color:var(--text);">
-            Software engineer com mais de oito anos de experiência focada em apps mobile.
-            Atuei em diferentes indústrias (e-commerce, banking e soluções customizadas),
-            com foco em criar novas ideias e entregar acima do esperado.
-          </p>
-          <p class="d" style="margin:10px 0 0;color:var(--muted);">
-            Interesses: Design Patterns, Concurrency e Code Architecture. Também atuo com liderança,
-            colaborando com back-end/front-end e times de negócio para alinhar requisitos e qualidade de entrega.
-          </p>
-        </div>
-
-        <div class="grid2">
-          <div class="tile">
-            <div class="t">strengths</div>
-            <p class="d" style="margin:0;">
-              UI complexa (estados, listas interativas), search/filter/sort no client-side,
-              notificações e deep links, caching (memória/armazenamento) e componentes custom.
-            </p>
-          </div>
-          <div class="tile">
-            <div class="t">languages</div>
-            <p class="d" style="margin:0;">Português: nativo • Inglês: full professional</p>
-          </div>
-        </div>
-
-        <div class="tile" style="margin-top:16px;">
-          <div class="t">contact</div>
-          <p class="d" style="margin:0;">
-            email: <a href="mailto:raha148@hotmail.com">raha148@hotmail.com</a><br/>
-            linkedin: <a href="https://www.linkedin.com/in/rafaz-dev" rel="noreferrer">linkedin.com/in/rafaz-dev</a><br/>
-            github: <a href="https://github.com/rafaz182" rel="noreferrer">github.com/rafaz182</a>
-          </p>
-        </div>
-
-        <div class="statusbar" role="status" aria-label="Barra de status">
-          <span><b>status</b>: /sobre</span>
-          <span><b>last</b>: <span data-status-last>—</span></span>
-          <span><b>tz</b>: <span data-status-tz>—</span></span>
-          <span><b>theme</b>: <span data-status-theme>dark</span></span>
-        </div>
-
-        <div class="footer">
-          <a href="index.html">cd ..</a>
-          <span style="color:var(--muted);">stack: Kotlin • Android • Architecture</span>
-        </div>
+      <div class="tile" style="margin-top:16px;">
+        <div class="t">contact</div>
+        <p class="d" id="contact-block" style="margin:0;">—</p>
       </div>
-    </main>
-  </div>
 
-  <script src="assets/main.js"></script>
+      <div class="statusbar" role="status" aria-label="Barra de status">
+        <span><b>status</b>: /sobre</span>
+        <span><b>last</b>: <span data-status-last>—</span></span>
+        <span><b>tz</b>: <span data-status-tz>—</span></span>
+        <span><b>theme</b>: <span data-status-theme>dark</span></span>
+      </div>
+
+      <div class="footer">
+        <a href="index.html">cd ..</a>
+        <span style="color:var(--muted);" id="footer-stack">stack: Kotlin • Android • Architecture</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="assets/main.js"></script>
+<script>
+(async function () {
+  const CV_URL = "/open-cv.json";
+
+  function levelLabel(level) {
+    const map = {
+      native:       "nativo",
+      fluent:       "fluente",
+      full_professional: "full professional",
+      professional: "professional",
+      advanced:     "avançado",
+      intermediate: "intermediário",
+    };
+    return map[level] || level;
+  }
+
+  function populateSidebar(profile) {
+    const { name, title, location, links } = profile;
+    document.getElementById("sidebar-name").textContent     = name;
+    document.getElementById("sidebar-subtitle").textContent = `${title} • ${location}`;
+
+    const emailEl = document.getElementById("sidebar-email");
+    emailEl.textContent = links.email;
+    emailEl.href = `mailto:${links.email}`;
+
+    const linkedinEl = document.getElementById("sidebar-linkedin");
+    linkedinEl.textContent = links.linkedin.replace("https://linkedin.com", "");
+    linkedinEl.href = links.linkedin;
+
+    const githubEl = document.getElementById("sidebar-github");
+    githubEl.textContent = links.github.replace("https://github.com", "");
+    githubEl.href = links.github;
+  }
+
+  function populateSobre(cv) {
+    const { profile, skills, languages } = cv;
+
+    // Bio
+    document.getElementById("bio-main").textContent =
+      profile.bio || "Software engineer com mais de oito anos de experiência focada em apps mobile.";
+    document.getElementById("bio-interests").textContent =
+      profile.interests || "Interesses: Design Patterns, Concurrency e Code Architecture.";
+
+    // Strengths
+    const strengthsEl = document.getElementById("strengths");
+    if (Array.isArray(profile.strengths) && profile.strengths.length) {
+      strengthsEl.textContent = profile.strengths.join(", ") + ".";
+    } else {
+      strengthsEl.textContent =
+        "UI complexa, search/filter/sort client-side, notificações, deep links, caching e componentes custom.";
+    }
+
+    // Spoken languages
+    const langText = languages
+      .map(l => `${l.language}: ${levelLabel(l.level)}`)
+      .join(" • ");
+    document.getElementById("spoken-languages").textContent = langText || "—";
+
+    // Skills block
+    const skillsEl = document.getElementById("skills-block");
+    const rows = [
+      { label: "linguagens", values: skills.languages },
+      { label: "plataformas", values: skills.platforms },
+      { label: "arquitetura", values: skills.architecture },
+      { label: "ferramentas", values: skills.tools },
+      { label: "práticas",    values: skills.practices },
+    ];
+    skillsEl.innerHTML = rows.map(r =>
+      `<p style="margin:4px 0;font-size:13px;">
+        <span style="color:var(--muted);min-width:90px;display:inline-block;">${r.label}</span>
+        ${r.values.join(" • ")}
+      </p>`
+    ).join("");
+
+    // Contact
+    const { links } = profile;
+    document.getElementById("contact-block").innerHTML =
+      `email: <a href="mailto:${links.email}">${links.email}</a><br/>
+       linkedin: <a href="${links.linkedin}" rel="noreferrer">${links.linkedin}</a><br/>
+       github: <a href="${links.github}" rel="noreferrer">${links.github}</a>`;
+
+    // Footer stack
+    const stackStr = [...skills.languages, ...skills.platforms].join(" • ");
+    document.getElementById("footer-stack").textContent = `stack: ${stackStr}`;
+  }
+
+  try {
+    const res = await fetch(CV_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const cv  = await res.json();
+    populateSidebar(cv.profile);
+    populateSobre(cv);
+  } catch (err) {
+    console.error("[open-cv] falha ao carregar:", err);
+  }
+})();
+</script>
+
 </body>
 </html>
