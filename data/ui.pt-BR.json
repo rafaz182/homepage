@@ -103,5 +103,36 @@
     "label": "Idioma",
     "portuguese": "Português",
     "english": "Inglês"
+  },
+  "pdf": {
+    "filenameSuffix": "Curriculo",
+    "sections": {
+      "experience": "Experiência",
+      "education": "Formação",
+      "skills": "Competências",
+      "languages": "Idiomas"
+    },
+    "notes": {
+      "recentExperience": "Exibindo as 5 experiências mais recentes · histórico completo em rafaz.dev/carreira"
+    },
+    "educationFallback": {
+      "studyType": "Tecnologia da Informação",
+      "institution": "Instituto Federal de Educação, Ciência e Tecnologia de São Paulo",
+      "startDate": "2014-01",
+      "endDate": "2017-12",
+      "location": "São Paulo, Brasil"
+    },
+    "languageLevels": {
+      "native": "nativo",
+      "fluent": "fluente",
+      "full professional": "profissional completo",
+      "full_professional": "profissional completo",
+      "proficient": "proficiente",
+      "professional working": "profissional",
+      "limited working": "profissional limitado",
+      "elementary": "básico",
+      "advanced": "avançado",
+      "intermediate": "intermediário"
+    }
   }
 }

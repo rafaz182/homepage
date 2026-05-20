@@ -103,5 +103,36 @@
     "label": "Language",
     "portuguese": "Portuguese",
     "english": "English"
+  },
+  "pdf": {
+    "filenameSuffix": "Resume",
+    "sections": {
+      "experience": "Experience",
+      "education": "Education",
+      "skills": "Skills",
+      "languages": "Languages"
+    },
+    "notes": {
+      "recentExperience": "Showing 5 most recent · full history at rafaz.dev/carreira"
+    },
+    "educationFallback": {
+      "studyType": "Information Technology",
+      "institution": "Federal Institute of Education, Science and Technology of São Paulo",
+      "startDate": "2014-01",
+      "endDate": "2017-12",
+      "location": "São Paulo, Brazil"
+    },
+    "languageLevels": {
+      "native": "native",
+      "fluent": "fluent",
+      "full professional": "full professional",
+      "full_professional": "full professional",
+      "proficient": "proficient",
+      "professional working": "professional working",
+      "limited working": "limited working",
+      "elementary": "elementary",
+      "advanced": "advanced",
+      "intermediate": "intermediate"
+    }
   }
 }

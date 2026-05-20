@@ -13,21 +13,21 @@ export function initResumePdfExport({ ui, locale } = {}) {
   const MUTED = '#6b6b6b';
   const CHIP  = '#999999';
 
-  // Fallback hardcoded — usado APENAS se cv.education vier vazio
-  const EDU_FALLBACK = [{
-    studyType:   'Information Technology',
-    institution: 'Instituto Federal de Educação, Ciência e Tecnologia de São Paulo',
-    startDate:   '2014-01',
-    endDate:     '2017-12',
-    location:    'São Paulo, Brazil'
-  }];
+  const PDF_LABELS = ui?.pdf || {};
+
+  const SECTION_LABELS = {
+    experience: PDF_LABELS.sections?.experience || 'Experience',
+    education:  PDF_LABELS.sections?.education  || 'Education',
+    skills:     PDF_LABELS.sections?.skills     || 'Skills',
+    languages:  PDF_LABELS.sections?.languages  || 'Languages'
+  };
 
   const SKILL_LABELS = {
-    languages:    'Languages',
-    platforms:    'Platforms',
-    architecture: 'Architecture',
-    tools:        'Tools',
-    practices:    'Practices'
+    languages:    ui?.skills?.languages    || 'Languages',
+    platforms:    ui?.skills?.platforms    || 'Platforms',
+    architecture: ui?.skills?.architecture || 'Architecture',
+    tools:        ui?.skills?.tools        || 'Tools',
+    practices:    ui?.skills?.practices    || 'Practices'
   };
 
   const LANG_LEVEL_MAP = {
@@ -64,7 +64,8 @@ export function initResumePdfExport({ ui, locale } = {}) {
       const cv = await fetchCv(locale);
       const avatar = await resolveAvatar(cv);
       const docDef = buildResumeDocDef(cv, avatar);
-      const filename = `${(cv.profile?.name || 'resume').replace(/\s+/g, '_')}_Resume.pdf`;
+      const suffix = PDF_LABELS.filenameSuffix || 'Resume';
+      const filename = `${(cv.profile?.name || 'resume').replace(/\s+/g, '_')}_${suffix}.pdf`;
       pdfMake.createPdf(docDef).download(filename, () => {
         b.textContent = ui?.actions?.done || 'done ✓';
         setTimeout(() => { b.textContent = originalText; b.disabled = false; }, 2000);
@@ -163,9 +164,30 @@ export function initResumePdfExport({ ui, locale } = {}) {
   /* ---------- helpers ---------- */
 
   function fmtDate(iso) {
-    if (!iso) return 'Ongoing';
+    if (!iso) return ui?.date?.present || 'present';
     const [y, m] = String(iso).split('-');
-    return m ? `${m}/${y}` : y;
+    if (!m) return y;
+
+    const monthIndex = parseInt(m, 10) - 1;
+    const month = ui?.date?.monthsShort?.[monthIndex];
+
+    return month ? `${month}/${y}` : `${m}/${y}`;
+  }
+
+  function educationFallback() {
+    const fallback = PDF_LABELS.educationFallback || {};
+    return [{
+      studyType:   fallback.studyType   || 'Information Technology',
+      institution: fallback.institution || 'Instituto Federal de Educação, Ciência e Tecnologia de São Paulo',
+      startDate:   fallback.startDate   || '2014-01',
+      endDate:     fallback.endDate     || '2017-12',
+      location:    fallback.location    || 'São Paulo, Brazil'
+    }];
+  }
+
+  function languageLevelLabel(level) {
+    const key = String(level || '').toLowerCase();
+    return PDF_LABELS.languageLevels?.[key] || level || '';
   }
 
   function sectionTitle(text) {
@@ -311,7 +333,7 @@ export function initResumePdfExport({ ui, locale } = {}) {
           width: '*',
           stack: [
             { text: lang.language || '', fontSize: 10, bold: true, color: DARK },
-            { text: lang.level || '',    fontSize: 9, color: MUTED }
+            { text: languageLevelLabel(lang.level), fontSize: 9, color: MUTED }
           ]
         },
         { width: 'auto', stack: [dotsCanvas(lvl)], alignment: 'right', margin: [0, 9, 0, 0] }
@@ -347,7 +369,7 @@ export function initResumePdfExport({ ui, locale } = {}) {
     const recentWork = (cv.experience || []).slice(0, 5);
     const eduSource = (Array.isArray(cv.education) && cv.education.length)
       ? cv.education
-      : EDU_FALLBACK;
+      : educationFallback();
 
     const linkedinShort = links.linkedin ? links.linkedin.replace(/^https?:\/\//, '') : '';
 
@@ -389,8 +411,8 @@ export function initResumePdfExport({ ui, locale } = {}) {
         {
           width: '75%',
           stack: [
-            sectionTitle('Experience'),
-            { text: 'Showing 5 most recent · full history at rafaz.dev/carreira', fontSize: 6.5, italics: true, color: MUTED, margin: [0, -2, 0, 4] },
+            sectionTitle(SECTION_LABELS.experience),
+            { text: PDF_LABELS.notes?.recentExperience || 'Showing 5 most recent · full history at rafaz.dev/carreira', fontSize: 6.5, italics: true, color: MUTED, margin: [0, -2, 0, 4] },
             ...recentWork.map((j, i) => workBlock(j, i === recentWork.length - 1))
           ]
         },
@@ -398,11 +420,11 @@ export function initResumePdfExport({ ui, locale } = {}) {
         {
           width: '*',
           stack: [
-            sectionTitle('Education'),
+            sectionTitle(SECTION_LABELS.education),
             ...eduSource.map(educationBlock),
-            sectionTitle('Skills'),
+            sectionTitle(SECTION_LABELS.skills),
             ...skillsSection(cv.skills),
-            sectionTitle('Languages'),
+            sectionTitle(SECTION_LABELS.languages),
             ...(cv.languages || []).map(languageBlock)
           ]
         }
