@@ -2,6 +2,7 @@ import { getCurrentLocale, applyI18n, initLocaleSwitcher } from "./js/i18n.js";
 import { loadSiteData } from "./js/data-loader.js";
 import { renderHome } from "./js/home.js";
 import { renderAbout } from "./js/about.js";
+import { renderCareer } from "./js/career.js";
 import { initActiveNav, initStatusbar } from "./js/statusbar.js";
 import { initTheme } from "./js/theme.js";
 import { initResumePdfExport } from "./js/resume-pdf.js";
@@ -22,6 +23,8 @@ async function main() {
 
   if (page === "about") {
     renderAbout(cv, ui);
+  } else if (page === "career") {
+    renderCareer(cv, ui);
   } else {
     renderHome(cv);
   }
@@ -36,6 +39,7 @@ function getCurrentPage() {
   const file = (location.pathname.split("/").pop() || "index.html").toLowerCase();
 
   if (file === "sobre.html") return "about";
+  if (file === "carreira.html") return "career";
   if (file === "index.html" || file === "") return "home";
 
   return "home";

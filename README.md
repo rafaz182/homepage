@@ -1,17 +1,27 @@
-# i18n update package
+# i18n update — Home, Sobre e Carreira
 
-Copie estes arquivos para a raiz do repositório, preservando a estrutura:
+Este pacote mantém a convenção:
 
+```txt
+assets/main.js
+assets/js/*.js
+data/ui.pt-BR.json
+data/ui.en-US.json
+data/resume.pt-BR.json
+data/resume.en-US.json
+```
+
+## Arquivos principais atualizados nesta rodada
+
+- `carreira.html`
 - `assets/main.js`
-- `assets/js/*.js`
-- `data/resume.pt-BR.json`
-- `data/resume.en-US.json`
+- `assets/js/career.js`
 - `data/ui.pt-BR.json`
 - `data/ui.en-US.json`
-- `sobre.html`
-- `index.html` se quiser aplicar também a Home já modularizada
 
-A referência dos resumes fica em `assets/js/config.js`:
+## Referência dos dados
+
+As referências dos arquivos JSON ficam em `assets/js/config.js`:
 
 ```js
 export const DATA_PATHS = {
@@ -20,17 +30,24 @@ export const DATA_PATHS = {
 };
 ```
 
-Com isso, para `pt-BR` o site carrega `data/resume.pt-BR.json`; para `en-US`, carrega `data/resume.en-US.json`.
+Portanto:
 
-Teste local:
-
-```bash
-python -m http.server 8000
+```txt
+pt-BR -> data/ui.pt-BR.json + data/resume.pt-BR.json
+en-US -> data/ui.en-US.json + data/resume.en-US.json
 ```
 
-URLs:
+## Página Carreira
 
-- `http://localhost:8000/index.html?lang=pt-BR`
-- `http://localhost:8000/index.html?lang=en-US`
-- `http://localhost:8000/sobre.html?lang=pt-BR`
-- `http://localhost:8000/sobre.html?lang=en-US`
+`carreira.html` usa:
+
+```html
+<body data-page="career">
+<script type="module" src="assets/main.js"></script>
+```
+
+O roteamento da página fica em `assets/main.js`, e a renderização específica da lista de experiências fica em `assets/js/career.js`.
+
+## Regra seguida nesta rodada
+
+Strings existentes em `ui.*.json` e `resume.*.json` não foram alteradas. Foram adicionadas apenas novas chaves necessárias para remover strings hardcoded do `carreira.html`.

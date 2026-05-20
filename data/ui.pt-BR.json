@@ -37,7 +37,11 @@
   },
   "career": {
     "title": "Experiências",
-    "subtitle": "Timeline focada em impacto, arquitetura e execução."
+    "subtitle": "Timeline focada em impacto, arquitetura e execução.",
+    "sectionTitle": "Carreira",
+    "loading": "carregando…",
+    "empty": "Nenhuma experiência cadastrada.",
+    "source": "source"
   },
   "about": {
     "title": "whoami",
@@ -57,7 +61,9 @@
     "ogTitle": "Rafael Ramos — Android Consultant",
     "ogDescription": "Senior Android Developer especializado em Kotlin, arquitetura e performance.",
     "title": "Rafael Ramos — Homepage",
-    "description": "Senior Android Developer (Kotlin/Java). Carreira, blog e sobre."
+    "description": "Senior Android Developer (Kotlin/Java). Carreira, blog e sobre.",
+    "careerTitle": "Carreira — Rafael Ramos",
+    "careerDescription": "Experiência profissional, liderança e arquitetura Android."
   },
   "aria": {
     "navigation": "Navegação",
@@ -65,7 +71,8 @@
   },
   "paths": {
     "home": "/home",
-    "about": "/sobre"
+    "about": "/sobre",
+    "career": "/carreira"
   },
   "skills": {
     "languages": "linguagens",
@@ -73,5 +80,22 @@
     "architecture": "arquitetura",
     "tools": "ferramentas",
     "practices": "práticas"
+  },
+  "date": {
+    "present": "presente",
+    "monthsShort": [
+      "jan",
+      "fev",
+      "mar",
+      "abr",
+      "mai",
+      "jun",
+      "jul",
+      "ago",
+      "set",
+      "out",
+      "nov",
+      "dez"
+    ]
   }
 }
