@@ -81,8 +81,6 @@
   const MUTED = '#6b6b6b';
   const CHIP  = '#999999';
 
-  const GRAVATAR_URL = 'https://gravatar.com/rafaz182';
-
   // Fallback hardcoded — usado APENAS se cv.education vier vazio
   const EDU_FALLBACK = [{
     studyType:   'Information Technology',
@@ -111,10 +109,10 @@
   };
 
   const ICONS = {
-    phone: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1f1f1f" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A18 18 0 0 1 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>',
-    email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1f1f1f" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h16V8l-8 5-8-5z"/></svg>',
-    link:  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="#1f1f1f" stroke-width="2" stroke-linecap="round" d="M10.6 13.4a3 3 0 0 0 4.24 0l3-3a3 3 0 0 0-4.24-4.24l-1.5 1.5M13.4 10.6a3 3 0 0 0-4.24 0l-3 3a3 3 0 0 0 4.24 4.24l1.5-1.5"/></svg>',
-    pin:   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1f1f1f" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
+    phone: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${BLUE}" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A18 18 0 0 1 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>',
+    email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${BLUE}" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h16V8l-8 5-8-5z"/></svg>',
+    link:  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="${BLUE}" stroke-width="2" stroke-linecap="round" d="M10.6 13.4a3 3 0 0 0 4.24 0l3-3a3 3 0 0 0-4.24-4.24l-1.5 1.5M13.4 10.6a3 3 0 0 0-4.24 0l-3 3a3 3 0 0 0 4.24 4.24l1.5-1.5"/></svg>',
+    pin:   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${BLUE}" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
   };
 
   const btns = document.querySelectorAll('[data-export-resume]');
@@ -132,7 +130,7 @@
       b.disabled = true;
       b.textContent = 'building...';
       const cv = await fetchCv();
-      const avatar = await tryFetchAvatar(GRAVATAR_URL);
+      const avatar = await resolveAvatar(cv);
       const docDef = buildResumeDocDef(cv, avatar);
       const filename = `${(cv.profile?.name || 'resume').replace(/\s+/g, '_')}_Resume.pdf`;
       pdfMake.createPdf(docDef).download(filename, () => {
@@ -150,6 +148,31 @@
     const res = await fetch('open-cv.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`open-cv.json HTTP ${res.status}`);
     return res.json();
+  }
+
+  async function resolveAvatar(cv) {
+    const email    = cv.profile?.links?.email;
+    const fallback = cv.profile?.avatar;
+
+    // 1ª tentativa: Gravatar via hash SHA-256 do email
+    if (email && window.crypto?.subtle) {
+      try {
+        const buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.trim().toLowerCase()));
+        const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        const url  = `https://gravatar.com/avatar/${hash}?s=200&d=404`;
+        const img  = await tryFetchAvatar(url);
+        if (img) return img;
+      } catch (e) {
+        console.warn('[avatar] gravatar lookup failed', e.message);
+      }
+    }
+
+    // 2ª tentativa: profile.avatar do JSON (GitHub avatar URL, p.ex.)
+    if (fallback) {
+      const img = await tryFetchAvatar(fallback);
+      if (img) return img;
+    }
+    return null;
   }
 
   /* ---------- avatar (Gravatar + circular mask) ---------- */
@@ -239,15 +262,15 @@
       }
     ];
     if (job.companyDescription) {
-      stack.push({ text: job.companyDescription, fontSize: 8, color: '#444', margin: [0, 0, 0, 2] });
+      stack.push({ text: job.companyDescription, fontSize: 7.5, color: '#444', margin: [0, 0, 0, 2], lineHeight: 1.1 });
     }
     if (Array.isArray(job.highlights) && job.highlights.length) {
       stack.push({
-        ul: job.highlights.map(h => ({ text: h, fontSize: 8, color: '#222', lineHeight: 1.15 })),
+        ul: job.highlights.map(h => ({ text: h, fontSize: 7.5, color: '#222', lineHeight: 1.1 })),
         margin: [0, 1, 0, 0]
       });
     }
-    return { stack, margin: [0, 0, 0, isLast ? 0 : 6] };
+    return { stack, margin: [0, 0, 0, isLast ? 0 : 4] };
   }
 
   function educationBlock(edu) {
@@ -265,30 +288,45 @@
   }
 
   function chipsTable(chips) {
-    const H_GAP = 5; // espaçamento horizontal entre chips
-    const V_GAP = 4; // espaçamento vertical entre linhas
+    const TARGET_W   = 170;  // largura da coluna direita (~ ajuste se mudar layout)
+    const H_GAP      = 5;
+    const V_GAP      = 4;
+    const CHAR_W     = 4.6;  // aproximação Roboto Bold 7.5pt
+    const CHIP_EXTRA = 12;   // padding L+R + border
+
+    const estimate = (t) => Math.ceil(t.length * CHAR_W + CHIP_EXTRA);
+
+    // greedy packing
     const rows = [];
-    for (let i = 0; i < chips.length; i += 2) {
-      const a = chips[i];
-      const b = chips[i + 1];
-      rows.push({
-        columns: [
-          chipCell(a),
-          { width: H_GAP, text: '' },
-          b ? chipCell(b) : { width: '*', text: '' }
-        ],
+    let row = [], used = 0;
+    chips.forEach(chip => {
+      const w = estimate(chip);
+      const cost = row.length === 0 ? w : H_GAP + w;
+      if (used + cost > TARGET_W && row.length > 0) {
+        rows.push(row);
+        row = [chip]; used = w;
+      } else {
+        row.push(chip); used += cost;
+      }
+    });
+    if (row.length) rows.push(row);
+
+    return {
+      stack: rows.map(rowChips => ({
+        columns: rowChips
+          .flatMap((c, i) => i === 0 ? [chipCell(c)] : [{ width: H_GAP, text: '' }, chipCell(c)])
+          .concat([{ width: '*', text: '' }]),  // empurra chips pra esquerda
         margin: [0, 0, 0, V_GAP]
-      });
-    }
-    return { stack: rows };
+      }))
+    };
   }
 
   function chipCell(text) {
     return {
-      width: '*',
+      width: 'auto',
       table: {
-        widths: ['*'],
-        body: [[{ text, fontSize: 7.5, alignment: 'center', color: DARK }]]
+        widths: ['auto'],
+        body: [[{ text, fontSize: 7.5, bold: true, alignment: 'center', color: DARK }]]
       },
       layout: {
         hLineWidth: () => 1,
@@ -297,8 +335,8 @@
         vLineColor: () => CHIP,
         paddingTop:    () => 3,
         paddingBottom: () => 3,
-        paddingLeft:   () => 4,
-        paddingRight:  () => 4
+        paddingLeft:   () => 5,
+        paddingRight:  () => 5
       }
     };
   }
@@ -408,6 +446,7 @@
           width: '63%',
           stack: [
             sectionTitle('Experience'),
+            { text: 'Showing 5 most recent · full history at rafaz.dev/carreira', fontSize: 7, italics: true, color: MUTED, margin: [0, -2, 0, 4] },
             ...recentWork.map((j, i) => workBlock(j, i === recentWork.length - 1))
           ]
         },
@@ -428,7 +467,7 @@
 
     return {
       pageSize: 'A4',
-      pageMargins: [40, 40, 40, 40],
+      pageMargins: [32, 32, 32, 32],
       content: [header, body],
       defaultStyle: { font: 'Roboto', color: DARK }
     };

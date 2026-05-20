@@ -1,7 +1,7 @@
 {
     "$schema": "https://rafaz.dev/open-cv/schema.json",
     "meta": {
-        "version": "1.1.0",
+        "version": "1.1.5",
         "updatedAt": "2026-05-20",
         "locale": "pt-BR",
         "source": "https://rafaz.dev/open-cv.json"
@@ -23,7 +23,7 @@
         "avatar": "https://github.com/rafaz182.png",
         "openToWork": false,
         "links": {
-            "email": "raha148@hotmail.com",
+            "email": "rpereiraramos@gmail.com",
             "linkedin": "https://linkedin.com/in/rafaz-dev",
             "github": "https://github.com/rafaz182",
             "website": "https://rafaz.dev"
