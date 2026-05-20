@@ -76,11 +76,11 @@
     "career": "/carreira"
   },
   "skills": {
-    "languages": "linguagens",
-    "platforms": "plataformas",
-    "architecture": "arquitetura",
-    "tools": "ferramentas",
-    "practices": "práticas"
+    "languages": "Linguagens",
+    "platforms": "Plataformas",
+    "architecture": "Arquitetura",
+    "tools": "Ferramentas",
+    "practices": "Práticas"
   },
   "date": {
     "present": "presente",
