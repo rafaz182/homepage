@@ -11,14 +11,14 @@
         "handle": "rafaz-dev",
         "title": "Senior Android & Flutter Developer",
         "location": "São Paulo, BR",
-        "bio": "Software engineer com mais de oito anos de experiência focada em apps mobile. Atuei em diferentes indústrias (e-commerce, banking e soluções customizadas), com foco em criar novas ideias e entregar acima do esperado.",
-        "interests": "Design Patterns, Concurrency e Code Architecture. Atuo com liderança, colaborando com back-end/front-end e times de negócio para alinhar requisitos e qualidade de entrega.",
+        "bio": "Software Engineer com mais de 10 anos de experiência especializada no ecossistema mobile, liderando arquiteturas escaláveis e a entrega de produtos de alto impacto em e-commerce, banking e sistemas automotivos embarcados (AAOS). Focado em balancear trade-offs técnicos — como performance, latência e manutenibilidade — alinhando decisões de engenharia aos objetivos estratégicos de negócio e eficiência operacional.",
+        "interests": "Arquitetura orientada a Trade-offs, Concurrency avançada, Code Maintainability e Design Patterns. Atuo fortemente em liderança técnica e de pessoas, articulando soluções cross-functional entre engenharia (Mobile/Backend) e stakeholders de produto para garantir entregas resilientes e de alta qualidade.",
         "strengths": [
-            "UI complexa (estados, listas interativas)",
-            "Search, filter e sort no client-side",
-            "Notificações e deep links",
-            "Caching (memória e armazenamento)",
-            "Componentes custom"
+            "Desenho de Arquiteturas Complexas e Escaláveis (Clean, MVVM, MVI)",
+            "Gestão de Trade-offs (Performance vs. Tempo de Entrega)",
+            "Sistemas de Caching robustos e Resiliência Offline",
+            "Liderança técnica, mentoria e facilitação cross-team",
+            "Otimização e Customização de UI/UX em cenários de alta concorrência"
         ],
         "avatar": "https://github.com/rafaz182.png",
         "openToWork": false,
@@ -28,7 +28,7 @@
             "github": "https://github.com/rafaz182",
             "website": "https://rafaz.dev"
         },
-        "yearsOfExperience": 8,
+        "yearsOfExperience": 10,
         "industries": [
             "banking",
             "fintech",
@@ -40,18 +40,28 @@
         {
             "id": "asa-senior-flutter",
             "company": "ASA",
-            "companyDescription": "ASA - Gerando Valor Através de Gerações",
-            "role": "Senior Flutter Developer",
+            "companyDescription": "ASA Investments — Multi-family office e gestora de recursos de alta renda",
+            "role": "Senior Mobile Engineer (Flutter Specialist)",
             "type": "fulltime",
             "startDate": "2025-11",
-            "endDate": null,
+            "endDate": "2026-05",
             "location": "São Paulo, BR",
             "workMode": "onsite",
-            "highlights": [],
+            "highlights": [
+                "Responsável pela arquitetura, prototipagem e desenvolvimento do módulo core de Corretora/Home Broker, liderando a integração complexa via WebView/APIs com a infraestrutura da Nelogica para operações em tempo real na B3.",
+                "Implementação e gerenciamento de estado de uma das interfaces mais complexas do ecossistema: um dashboard financeiro de alta densidade composto por múltiplos gráficos simultâneos, listagens dinâmicas, paginação sob demanda e busca local otimizada.",
+                "Introdução de padrões rigorosos de gerenciamento de estado previsível utilizando Cubits, estabelecendo arquiteturas focadas em performance e eliminação de gargalos de re-renderização.",
+                "Atuação como guardião de qualidade de código através de Code Reviews focados em gerenciamento de memória (Memory Leaks), controle rígido do ciclo de vida de views declarativas e redução do overhead de mutação de estado."
+            ],
             "tags": [
                 "Flutter",
                 "Dart",
-                "Mobile"
+                "State Management (Bloc/Cubit)",
+                "Nelogica Integration",
+                "Home Broker Architecture",
+                "Performance Optimization",
+                "Declarative UI",
+                "Memory Management"
             ]
         },
         {
@@ -91,13 +101,18 @@
             "location": "São Paulo, BR",
             "workMode": "onsite",
             "highlights": [
-                "Liderança de time com 9 pessoas",
-                "Apoio na resolução de problemas técnicos de alto impacto"
+                "Liderança técnica e de pessoas de uma equipe multidisciplinar (9 engenheiros), gerenciando o ciclo completo de entrega de produtos.",
+                "Ponto focal estratégico atuando de forma próxima a stakeholders de Negócios e Operações, traduzindo requisitos de mercado em soluções técnicas escaláveis e de alta resiliência.",
+                "Responsável pela gestão de trade-offs de engenharia do ecossistema mobile, garantindo alta performance sob cenários de concorrência agressiva e mitigação de débitos técnicos.",
+                "Promoção da cultura de engenharia e intraempreendedorismo, atuando no desenvolvimento de carreiras, mentoria técnica avançada e facilitação de dinâmicas cross-functional."
             ],
             "tags": [
-                "Android",
-                "Kotlin",
-                "Leadership"
+                "Technical Leadership",
+                "Stakeholder Management",
+                "People Management",
+                "Cross-functional Leadership",
+                "Systems Architecture",
+                "Trade-off Analysis"
             ]
         },
         {
@@ -117,7 +132,7 @@
             ],
             "tags": [
                 "Architecture",
-                "Gradle",
+                "Gradle Tuning",
                 "Notifications",
                 "Deep Links",
                 "Analytics"
@@ -209,7 +224,7 @@
         "platforms": [
             "Android",
             "Android Automotive",
-            "Flutter"
+            "Flutter (Mobile/Web)"
         ],
         "architecture": [
             "MVVM",
