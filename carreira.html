@@ -1,119 +1,133 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Carreira — Rafael Ramos</title>
-<meta name="description" content="Experiência profissional, liderança e arquitetura Android." />
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Rafael Ramos — Android Consultant">
-<meta property="og:description" content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rafaz.dev/carreira.html">
-<meta property="og:image" content="https://rafaz.dev/assets/preview.png">
-<link rel="icon" href="assets/favicon.svg" />
-<link rel="stylesheet" href="assets/style.css" />
-<script>
-(function(){
-  const k = "rafaz_theme";
-  const s = localStorage.getItem(k);
-  const p = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", (s === "dark" || s === "light") ? s : p);
-})();
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carreira — Rafael Ramos</title>
+  <meta name="description" content="Experiência profissional, liderança e arquitetura Android." />
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Rafael Ramos — Android Consultant">
+  <meta property="og:description"
+    content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rafaz.dev/carreira.html">
+  <meta property="og:image" content="https://rafaz.dev/assets/preview.png">
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const k = "rafaz_theme";
+      const s = localStorage.getItem(k);
+      const p = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", (s === "dark" || s === "light") ? s : p);
+    })();
+  </script>
 </head>
+
 <body>
 
-<div class="topbarMobile">
-  <div class="wrap">
-    <div class="pill" style="gap:10px;">
-      <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
-      <span style="font-family:var(--mono);color:var(--muted);">/carreira</span>
-    </div>
-    <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
-  </div>
-</div>
-
-<div class="container">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="avatar" aria-hidden="true">&gt;_</div>
-      <div>
-        <h1 id="sidebar-name">Rafael Ramos</h1>
-        <p id="sidebar-title">Senior Android • Kotlin/Java • SP</p>
-      </div>
-    </div>
-    <nav class="nav" aria-label="Navegação">
-      <a data-nav href="index.html">Início <span>00</span></a>
-      <a data-nav href="carreira.html">Carreira <span>01</span></a>
-      <a data-nav href="blog.html">Blog <span>02</span></a>
-      <a data-nav href="sobre.html">Sobre <span>03</span></a>
-    </nav>
-    <div class="sidebarFooter">
-      <div class="kbdRow">
-        <div class="row"><span>email</span><a id="sidebar-email" href="#">—</a></div>
-        <div class="row"><span>linkedin</span><a id="sidebar-linkedin" href="#" rel="noreferrer">—</a></div>
-        <div class="row"><span>github</span><a id="sidebar-github" href="#" rel="noreferrer">—</a></div>
+  <div class="topbarMobile">
+    <div class="wrap">
+      <div class="pill" style="gap:10px;">
+        <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
+        <span style="font-family:var(--mono);color:var(--muted);">/carreira</span>
       </div>
       <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
     </div>
-  </aside>
+  </div>
 
-  <main class="main">
-    <div class="card">
-      <p class="sectionTitle">Carreira</p>
-      <h2 class="h1" style="font-size:36px;margin-bottom:6px;">Experiência</h2>
-      <p class="sub">Timeline focada em impacto, arquitetura e execução.</p>
-
-      <!-- Lista de experiências — preenchida via fetch() -->
-      <ul class="list" id="experience-list" style="margin-top:14px;">
-        <li class="item" id="experience-loading">
-          <p style="color:var(--muted);font-family:var(--mono);font-size:13px;">carregando…</p>
-        </li>
-      </ul>
-
-      <div class="statusbar" role="status" aria-label="Barra de status">
-        <span><b>status</b>: /carreira</span>
-        <span><b>last</b>: <span data-status-last>—</span></span>
-        <span><b>tz</b>: <span data-status-tz>—</span></span>
-        <span><b>theme</b>: <span data-status-theme>dark</span></span>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">&gt;_</div>
+        <div>
+          <h1 id="sidebar-name">Rafael Ramos</h1>
+          <p id="sidebar-title">Senior Android • Kotlin/Java • SP</p>
+        </div>
       </div>
-
-      <div class="footer">
-        <a href="index.html">cd ..</a>
-        <span style="color:var(--muted);">source: <a id="cv-source" href="/open-cv.json" target="_blank">open-cv.json</a></span>
+      <nav class="nav" aria-label="Navegação">
+        <a data-nav href="index.html">Início <span>00</span></a>
+        <a data-nav href="carreira.html">Carreira <span>01</span></a>
+        <a data-nav href="blog.html">Blog <span>02</span></a>
+        <a data-nav href="sobre.html">Sobre <span>03</span></a>
+      </nav>
+      <div class="sidebarFooter">
+        <div class="kbdRow">
+          <div class="row"><span>email</span><a id="sidebar-email" href="#">—</a></div>
+          <div class="row"><span>linkedin</span><a id="sidebar-linkedin" href="#" rel="noreferrer">—</a></div>
+          <div class="row"><span>github</span><a id="sidebar-github" href="#" rel="noreferrer">—</a></div>
+        </div>
+        <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
       </div>
-    </div>
-  </main>
-</div>
+    </aside>
 
-<script src="assets/main.js"></script>
-<script>
-(async function () {
-  const CV_URL = "/open-cv.json";
+    <main class="main">
+      <div class="card">
+        <p class="sectionTitle">Carreira</p>
+        <h2 class="h1" style="font-size:36px;margin-bottom:6px;">Experiência</h2>
+        <p class="sub">Timeline focada em impacto, arquitetura e execução.</p>
 
-  function formatDate(dateStr) {
-    if (!dateStr) return "presente";
-    const [year, month] = dateStr.split("-");
-    const months = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
-    return `${months[parseInt(month, 10) - 1]}/${year}`;
-  }
+        <div style="margin-top:12px;">
+          <button id="exportResumeBtn" class="btn" type="button" aria-label="Exportar currículo em PDF">
+            ⬇ Export Resume (PDF)
+          </button>
+          <span id="exportResumeStatus"
+            style="margin-left:10px;font-family:var(--mono);color:var(--muted);font-size:12px;"></span>
+        </div>
 
-  function renderExperience(experience) {
-    return experience.map(job => {
-      const start  = formatDate(job.startDate);
-      const end    = formatDate(job.endDate);
-      const period = `${start} → ${end}`;
+        <!-- Lista de experiências — preenchida via fetch() -->
+        <ul class="list" id="experience-list" style="margin-top:14px;">
+          <li class="item" id="experience-loading">
+            <p style="color:var(--muted);font-family:var(--mono);font-size:13px;">carregando…</p>
+          </li>
+        </ul>
 
-      const highlights = job.highlights.length
-        ? `<ul>${job.highlights.map(h => `<li>${h}</li>`).join("")}</ul>`
-        : "";
+        <div class="statusbar" role="status" aria-label="Barra de status">
+          <span><b>status</b>: /carreira</span>
+          <span><b>last</b>: <span data-status-last>—</span></span>
+          <span><b>tz</b>: <span data-status-tz>—</span></span>
+          <span><b>theme</b>: <span data-status-theme>dark</span></span>
+        </div>
 
-      const chips = job.tags.length
-        ? `<div class="chips">${job.tags.map(t => `<span class="chip">${t}</span>`).join("")}</div>`
-        : "";
+        <div class="footer">
+          <a href="index.html">cd ..</a>
+          <span style="color:var(--muted);">source: <a id="cv-source" href="/open-cv.json"
+              target="_blank">open-cv.json</a></span>
+        </div>
+      </div>
+    </main>
+  </div>
 
-      return `
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.js"></script>
+  <script src="assets/main.js"></script>
+  <script>
+    (async function () {
+      const CV_URL = "/open-cv.json";
+
+      function formatDate(dateStr) {
+        if (!dateStr) return "presente";
+        const [year, month] = dateStr.split("-");
+        const months = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+        return `${months[parseInt(month, 10) - 1]}/${year}`;
+      }
+
+      function renderExperience(experience) {
+        return experience.map(job => {
+          const start = formatDate(job.startDate);
+          const end = formatDate(job.endDate);
+          const period = `${start} → ${end}`;
+
+          const highlights = job.highlights.length
+            ? `<ul>${job.highlights.map(h => `<li>${h}</li>`).join("")}</ul>`
+            : "";
+
+          const chips = job.tags.length
+            ? `<div class="chips">${job.tags.map(t => `<span class="chip">${t}</span>`).join("")}</div>`
+            : "";
+
+          return `
         <li class="item">
           <h3>${job.company} — ${job.role}</h3>
           <div class="meta">${period} • ${job.location}</div>
@@ -121,54 +135,55 @@
           ${chips}
         </li>
       `;
-    }).join("");
-  }
+        }).join("");
+      }
 
-  function populateSidebar(profile) {
-    const { name, title, location, links } = profile;
+      function populateSidebar(profile) {
+        const { name, title, location, links } = profile;
 
-    document.getElementById("sidebar-name").textContent  = name;
-    document.getElementById("sidebar-title").textContent = `${title} • ${location}`;
+        document.getElementById("sidebar-name").textContent = name;
+        document.getElementById("sidebar-title").textContent = `${title} • ${location}`;
 
-    const emailEl = document.getElementById("sidebar-email");
-    emailEl.textContent = links.email;
-    emailEl.href = `mailto:${links.email}`;
+        const emailEl = document.getElementById("sidebar-email");
+        emailEl.textContent = links.email;
+        emailEl.href = `mailto:${links.email}`;
 
-    const linkedinEl = document.getElementById("sidebar-linkedin");
-    linkedinEl.textContent = links.linkedin.replace("https://linkedin.com", "");
-    linkedinEl.href = links.linkedin;
+        const linkedinEl = document.getElementById("sidebar-linkedin");
+        linkedinEl.textContent = links.linkedin.replace("https://linkedin.com", "");
+        linkedinEl.href = links.linkedin;
 
-    const githubEl = document.getElementById("sidebar-github");
-    githubEl.textContent = links.github.replace("https://github.com", "");
-    githubEl.href = links.github;
-  }
+        const githubEl = document.getElementById("sidebar-github");
+        githubEl.textContent = links.github.replace("https://github.com", "");
+        githubEl.href = links.github;
+      }
 
-  try {
-    const res  = await fetch(CV_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const cv   = await res.json();
+      try {
+        const res = await fetch(CV_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const cv = await res.json();
 
-    populateSidebar(cv.profile);
+        populateSidebar(cv.profile);
 
-    const list = document.getElementById("experience-list");
-    list.innerHTML = renderExperience(cv.experience);
+        const list = document.getElementById("experience-list");
+        list.innerHTML = renderExperience(cv.experience);
 
-    const sourceEl = document.getElementById("cv-source");
-    if (cv.meta?.source) sourceEl.href = cv.meta.source;
+        const sourceEl = document.getElementById("cv-source");
+        if (cv.meta?.source) sourceEl.href = cv.meta.source;
 
-  } catch (err) {
-    const list = document.getElementById("experience-list");
-    list.innerHTML = `
+      } catch (err) {
+        const list = document.getElementById("experience-list");
+        list.innerHTML = `
       <li class="item">
         <p style="color:var(--muted);font-family:var(--mono);font-size:13px;">
           erro ao carregar open-cv.json — ${err.message}
         </p>
       </li>
     `;
-    console.error("[open-cv] falha ao carregar:", err);
-  }
-})();
-</script>
+        console.error("[open-cv] falha ao carregar:", err);
+      }
+    })();
+  </script>
 
 </body>
+
 </html>
