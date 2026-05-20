@@ -76,26 +76,26 @@
  *  - Avatar via Gravatar (graceful fallback se indisponível)
  * ========================================================= */
 (function () {
-  const BLUE  = '#3E9BCD';
-  const DARK  = '#1f1f1f';
+  const BLUE = '#3E9BCD';
+  const DARK = '#1f1f1f';
   const MUTED = '#6b6b6b';
-  const CHIP  = '#999999';
+  const CHIP = '#999999';
 
   // Fallback hardcoded — usado APENAS se cv.education vier vazio
   const EDU_FALLBACK = [{
-    studyType:   'Information Technology',
+    studyType: 'Information Technology',
     institution: 'Instituto Federal de Educação, Ciência e Tecnologia de São Paulo',
-    startDate:   '2014-01',
-    endDate:     '2017-12',
-    location:    'São Paulo, Brazil'
+    startDate: '2014-01',
+    endDate: '2017-12',
+    location: 'São Paulo, Brazil'
   }];
 
   const SKILL_LABELS = {
-    languages:    'Languages',
-    platforms:    'Platforms',
+    languages: 'Languages',
+    platforms: 'Platforms',
     architecture: 'Architecture',
-    tools:        'Tools',
-    practices:    'Practices'
+    tools: 'Tools',
+    practices: 'Practices'
   };
 
   const LANG_LEVEL_MAP = {
@@ -109,10 +109,10 @@
   };
 
   const ICONS = {
-    phone: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${BLUE}" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A18 18 0 0 1 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>',
-    email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${BLUE}" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h16V8l-8 5-8-5z"/></svg>',
-    link:  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="${BLUE}" stroke-width="2" stroke-linecap="round" d="M10.6 13.4a3 3 0 0 0 4.24 0l3-3a3 3 0 0 0-4.24-4.24l-1.5 1.5M13.4 10.6a3 3 0 0 0-4.24 0l-3 3a3 3 0 0 0 4.24 4.24l1.5-1.5"/></svg>',
-    pin:   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${BLUE}" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
+    phone: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${DARK}" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A18 18 0 0 1 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>',
+    email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${DARK}" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h16V8l-8 5-8-5z"/></svg>',
+    link: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="${DARK}" stroke-width="2" stroke-linecap="round" d="M10.6 13.4a3 3 0 0 0 4.24 0l3-3a3 3 0 0 0-4.24-4.24l-1.5 1.5M13.4 10.6a3 3 0 0 0-4.24 0l-3 3a3 3 0 0 0 4.24 4.24l1.5-1.5"/></svg>',
+    pin: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="${DARK}" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
   };
 
   const btns = document.querySelectorAll('[data-export-resume]');
@@ -151,16 +151,16 @@
   }
 
   async function resolveAvatar(cv) {
-    const email    = cv.profile?.links?.email;
+    const email = cv.profile?.links?.email;
     const fallback = cv.profile?.avatar;
 
     // 1ª tentativa: Gravatar via hash SHA-256 do email
     if (email && window.crypto?.subtle) {
       try {
-        const buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.trim().toLowerCase()));
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(email.trim().toLowerCase()));
         const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
-        const url  = `https://gravatar.com/avatar/${hash}?s=200&d=404`;
-        const img  = await tryFetchAvatar(url);
+        const url = `https://gravatar.com/avatar/${hash}?s=200&d=404`;
+        const img = await tryFetchAvatar(url);
         if (img) return img;
       } catch (e) {
         console.warn('[avatar] gravatar lookup failed', e.message);
@@ -197,7 +197,7 @@
   function blobToDataUrl(blob) {
     return new Promise((resolve, reject) => {
       const r = new FileReader();
-      r.onload  = () => resolve(r.result);
+      r.onload = () => resolve(r.result);
       r.onerror = reject;
       r.readAsDataURL(blob);
     });
@@ -247,18 +247,33 @@
         vLineWidth: () => 0,
         hLineColor: () => '#000000',
         paddingLeft: () => 0, paddingRight: () => 0,
-        paddingTop: () => 0,  paddingBottom: () => 2
+        paddingTop: () => 0, paddingBottom: () => 2
       }
     };
   }
 
   function workBlock(job, isLast) {
     const stack = [
-      { text: job.role || '',    fontSize: 9.5, bold: true, color: DARK },
-      { text: job.company || '', fontSize: 9,   bold: true, color: BLUE, margin: [0, 1, 0, 1] },
+      { text: job.role || '', fontSize: 9.5, bold: true, color: DARK },
+      { text: job.company || '', fontSize: 9, bold: true, color: BLUE, margin: [0, 1, 0, 1] },
       {
-        text: `${fmtDate(job.startDate)} - ${fmtDate(job.endDate)}     ${iconText(ICONS.pin, job.location || '')}`,
-        fontSize: 7.5, color: MUTED, margin: [0, 0, 0, 2]
+        columns: [
+          {
+            width: 'auto',
+            text: `${fmtDate(job.startDate)} - ${fmtDate(job.endDate)}`,
+            fontSize: 7.5,
+            color: MUTED
+          },
+          { width: 12, text: '' },
+          {
+            width: 'auto',
+            columns: [
+              { width: 8, svg: ICONS.pin, fit: [7, 7], margin: [0, 0.5, 0, 0] },
+              { width: 'auto', text: job.location || '', fontSize: 7.5, color: MUTED, margin: [3, 0, 0, 0] }
+            ]
+          }
+        ],
+        margin: [0, 0, 0, 2]
       }
     ];
     if (job.companyDescription) {
@@ -266,11 +281,11 @@
     }
     if (Array.isArray(job.highlights) && job.highlights.length) {
       stack.push({
-        ul: job.highlights.map(h => ({ text: h, fontSize: 7.0, color: '#222', lineHeight: 1.15 })),
+        ul: job.highlights.map(h => ({ text: h, fontSize: 7.0, color: '#222', lineHeight: 1.2 })),
         margin: [0, 1, 0, 0]
       });
     }
-    return { stack, margin: [0, 0, 0, isLast ? 0 : 6] };
+    return { stack, margin: [0, 0, 0, isLast ? 0 : 10] };
   }
 
   function educationBlock(edu) {
@@ -279,8 +294,22 @@
         { text: edu.studyType || edu.area || '', fontSize: 9.5, bold: true, color: DARK },
         { text: edu.institution || '', fontSize: 9, bold: true, color: BLUE, margin: [0, 1, 0, 1] },
         {
-          text: `${fmtDate(edu.startDate)} - ${fmtDate(edu.endDate)}     ${iconText(ICONS.pin, edu.location || '')}`,
-          fontSize: 7.5, color: MUTED
+          columns: [
+            {
+              width: 'auto',
+              text: `${fmtDate(edu.startDate)} - ${fmtDate(edu.endDate)}`,
+              fontSize: 7.5,
+              color: MUTED
+            },
+            { width: 12, text: '' },
+            {
+              width: 'auto',
+              columns: [
+                { width: 8, svg: ICONS.pin, fit: [7, 7], margin: [0, 0.5, 0, 0] },
+                { width: 'auto', text: edu.location || '', fontSize: 7.5, color: MUTED, margin: [3, 0, 0, 0] }
+              ]
+            }
+          ]
         }
       ],
       margin: [0, 0, 0, 6]
@@ -288,10 +317,10 @@
   }
 
   function chipsTable(chips) {
-    const TARGET_W   = 170;  // largura da coluna direita (~ ajuste se mudar layout)
-    const H_GAP      = 5;
-    const V_GAP      = 4;
-    const CHAR_W     = 4.6;  // aproximação Roboto Bold 7.5pt
+    const TARGET_W = 170;  // largura da coluna direita (~ ajuste se mudar layout)
+    const H_GAP = 5;
+    const V_GAP = 4;
+    const CHAR_W = 4.6;  // aproximação Roboto Bold 7.5pt
     const CHIP_EXTRA = 12;   // padding L+R + border
 
     const estimate = (t) => Math.ceil(t.length * CHAR_W + CHIP_EXTRA);
@@ -333,10 +362,10 @@
         vLineWidth: () => 1,
         hLineColor: () => CHIP,
         vLineColor: () => CHIP,
-        paddingTop:    () => 3,
+        paddingTop: () => 3,
         paddingBottom: () => 3,
-        paddingLeft:   () => 5,
-        paddingRight:  () => 5
+        paddingLeft: () => 5,
+        paddingRight: () => 5
       }
     };
   }
@@ -367,7 +396,7 @@
           width: '*',
           stack: [
             { text: lang.language || '', fontSize: 10, bold: true, color: DARK },
-            { text: lang.level || '',    fontSize: 9, color: MUTED }
+            { text: lang.level || '', fontSize: 9, color: MUTED }
           ]
         },
         { width: 'auto', stack: [dotsCanvas(lvl)], alignment: 'right', margin: [0, 9, 0, 0] }
@@ -421,7 +450,7 @@
         {
           columns: [
             iconText(ICONS.link, linkedinShort),
-            iconText(ICONS.pin,  p.location)
+            iconText(ICONS.pin, p.location)
           ],
           margin: [0, 3, 0, 0]
         }
