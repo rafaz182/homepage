@@ -1,0 +1,292 @@
+{
+  "$schema": "https://rafaz.dev/open-cv/schema.json",
+  "meta": {
+    "version": "1.1.5",
+    "updatedAt": "2026-05-20",
+    "locale": "en-US",
+    "source": "https://rafaz.dev/data/resume.en-US.json"
+  },
+  "profile": {
+    "name": "Rafael P. Ramos",
+    "handle": "rafaz-dev",
+    "title": "Senior Android - Mobile Engineer/Architect",
+    "location": "São Paulo - SP, Brazil",
+    "bio": "Software Engineer with 10+ years of specialized experience in the mobile ecosystem, leading scalable architectures and delivering high-impact products across e-commerce, banking, and embedded automotive systems (AAOS). Focused on balancing technical trade-offs—such as performance, latency, and maintainability—while aligning engineering decisions with strategic business goals and operational efficiency.",
+    "interests": "Trade-off-oriented architecture, advanced concurrency, code maintainability, and design patterns. I work strongly across technical and people leadership, shaping cross-functional solutions between engineering (Mobile/Backend) and product stakeholders to ensure resilient, high-quality deliveries.",
+    "strengths": [
+      "Design of complex and scalable architectures (Clean, MVVM, MVI)",
+      "Trade-off management (performance vs. delivery time)",
+      "Robust caching systems and offline resilience",
+      "Technical leadership, mentoring, and cross-team facilitation",
+      "UI/UX optimization and customization in high-concurrency scenarios"
+    ],
+    "avatar": "https://github.com/rafaz182.png",
+    "openToWork": false,
+    "links": {
+      "email": "rpereiraramos@gmail.com",
+      "linkedin": "https://linkedin.com/in/rafaz-dev",
+      "github": "https://github.com/rafaz182",
+      "website": "https://rafaz.dev"
+    },
+    "yearsOfExperience": 10,
+    "industries": [
+      "banking",
+      "fintech",
+      "e-commerce",
+      "automotive"
+    ],
+    "phone": "+55 11 970 745 053"
+  },
+  "experience": [
+    {
+      "id": "asa-senior-flutter",
+      "company": "ASA",
+      "companyDescription": "ASA Investments — Multi-family office and asset manager focused on high-net-worth clients",
+      "role": "Senior Mobile Engineer (Flutter Specialist)",
+      "type": "fulltime",
+      "startDate": "2025-11",
+      "endDate": "2026-05",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Responsible for the architecture, prototyping, and development of the core Brokerage/Home Broker module, leading a complex WebView/API integration with Nelogica infrastructure for real-time trading on B3.",
+        "Implemented and managed the state of one of the ecosystem’s most complex interfaces: a high-density financial dashboard composed of multiple simultaneous charts, dynamic lists, on-demand pagination, and optimized local search.",
+        "Introduced rigorous predictable state-management patterns using Cubits, establishing architectures focused on performance and eliminating re-rendering bottlenecks.",
+        "Acted as a code-quality gatekeeper through code reviews focused on memory management (memory leaks), strict lifecycle control for declarative views, and reduced state-mutation overhead."
+      ],
+      "tags": [
+        "Flutter",
+        "Dart",
+        "State Management (Bloc/Cubit)",
+        "Nelogica Integration",
+        "Home Broker Architecture",
+        "Performance Optimization",
+        "Declarative UI",
+        "Memory Management"
+      ]
+    },
+    {
+      "id": "alten-infotainment",
+      "company": "ALTEN",
+      "role": "Infotainment System Developer",
+      "type": "fulltime",
+      "startDate": "2025-08",
+      "endDate": "2025-11",
+      "location": "Lund, Skåne County, Sweden",
+      "workMode": "onsite",
+      "highlights": [
+        "Engineer allocated to Volvo Cars’ in-house platform based on Android Automotive OS (AAOS).",
+        "Worked across ICUP, SPA1, SPA2, and SPA3 platforms (DHU 1.1, IHU 4.0, and memory-enhanced DHU 2.0 architectures).",
+        "Implemented features following AAOS UI patterns, including Panels and Scalable UI.",
+        "Main integration layer in Java; SystemUI components in Kotlin.",
+        "Every code change was covered by unit tests to ensure stability.",
+        "Managed workflow in Jira, documenting fixes, bugs, and incident records.",
+        "Analyzed Android bugreports with thousands of log lines across hardware and system layers."
+      ],
+      "tags": [
+        "Android Automotive",
+        "AAOS",
+        "Java",
+        "Kotlin",
+        "Java Concurrency",
+        "Jira"
+      ]
+    },
+    {
+      "id": "btg-associate-director",
+      "company": "BTG Pactual",
+      "role": "Associate Director",
+      "type": "fulltime",
+      "startDate": "2023-12",
+      "endDate": "2025-07",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Led both technical direction and people management for a multidisciplinary team of 9 engineers, managing the full product delivery lifecycle.",
+        "Served as a strategic focal point close to Business and Operations stakeholders, translating market requirements into scalable, highly resilient technical solutions.",
+        "Responsible for engineering trade-off management across the mobile ecosystem, ensuring high performance under aggressive concurrency scenarios while mitigating technical debt.",
+        "Promoted engineering culture and intrapreneurship through career development, advanced technical mentoring, and cross-functional facilitation."
+      ],
+      "tags": [
+        "Technical Leadership",
+        "Stakeholder Management",
+        "People Management",
+        "Cross-functional Leadership",
+        "Systems Architecture",
+        "Trade-off Analysis"
+      ]
+    },
+    {
+      "id": "btg-it-analyst",
+      "company": "BTG Pactual",
+      "role": "IT Analyst",
+      "type": "fulltime",
+      "startDate": "2020-02",
+      "endDate": "2023-12",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Architected the BTG Investimentos app following Google-recommended guidelines.",
+        "Implemented features such as notifications, deep links, and analytics.",
+        "Improved build time by tuning Gradle scripts.",
+        "Integrated a facial-recognition SDK."
+      ],
+      "tags": [
+        "Architecture",
+        "Gradle Tuning",
+        "Notifications",
+        "Deep Links",
+        "Analytics"
+      ]
+    },
+    {
+      "id": "mc1-android-engineer",
+      "company": "MC1",
+      "role": "Android Engineer",
+      "type": "fulltime",
+      "startDate": "2019-08",
+      "endDate": "2020-02",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Lead developer for the core Trade Marketing module, responsible for integrating and extending it within the company’s proprietary Server-Driven UI engine.",
+        "Worked directly on the conception, design, and development of the company’s Server-Driven UI SDK, creating highly customizable and performant UI components (Custom Views) from scratch.",
+        "Provided technical leadership during the successful certification and rollout of the new architectural ecosystem for the company’s first enterprise client, ensuring stability and technical adherence.",
+        "Maintained a strong focus on SOLID principles, Clean Architecture, and componentization to reduce coupling and maximize code reuse across different tenants."
+      ],
+      "tags": [
+        "Server-Driven UI",
+        "Android",
+        "Kotlin",
+        "Java",
+        "Custom Views",
+        "SDK Development",
+        "Componentization",
+        "SOLID"
+      ]
+    },
+    {
+      "id": "itau-android-engineer",
+      "company": "Itaú Unibanco",
+      "role": "Android Engineer",
+      "type": "fulltime",
+      "startDate": "2018-12",
+      "endDate": "2019-08",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Supported the correct adoption of MVVM.",
+        "Executed heavy tasks using Executor from the Java API.",
+        "Implemented facial-recognition and document-OCR SDKs."
+      ],
+      "tags": [
+        "MVVM",
+        "Concurrency",
+        "OCR"
+      ]
+    },
+    {
+      "id": "mc1-junior",
+      "company": "MC1",
+      "role": "Junior Software Engineer",
+      "type": "fulltime",
+      "startDate": "2018-01",
+      "endDate": "2018-12",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Contributed to the development of a proprietary Server-Driven UI SDK.",
+        "Built UI components from scratch.",
+        "Supported an international implementation for the first client in Mexico."
+      ],
+      "tags": [
+        "UI Components",
+        "Server-Driven UI",
+        "International rollout"
+      ]
+    },
+    {
+      "id": "mc1-intern",
+      "company": "MC1",
+      "role": "Software Engineer Intern",
+      "type": "internship",
+      "startDate": "2016-12",
+      "endDate": "2017-12",
+      "location": "São Paulo, Brazil",
+      "workMode": "onsite",
+      "highlights": [
+        "Built core engineering foundations and delivered features for mobile solutions."
+      ],
+      "tags": [
+        "Android",
+        "Foundations"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      "Kotlin",
+      "Java",
+      "Dart"
+    ],
+    "platforms": [
+      "Android",
+      "Android Automotive",
+      "Flutter (Mobile/Web)"
+    ],
+    "architecture": [
+      "MVVM",
+      "Clean Architecture",
+      "Server-Driven UI",
+      "MVI",
+      "AAOS UI Patterns"
+    ],
+    "tools": [
+      "Gradle",
+      "Retrofit",
+      "Jetpack Compose",
+      "Coroutines",
+      "Flow",
+      "Jira"
+    ],
+    "practices": [
+      "Deep Links",
+      "Push Notifications",
+      "Analytics",
+      "OCR",
+      "Biometrics",
+      "Unit Testing"
+    ]
+  },
+  "education": [],
+  "certifications": [],
+  "languages": [
+    {
+      "language": "Portuguese",
+      "level": "native"
+    },
+    {
+      "language": "English",
+      "level": "full professional"
+    }
+  ],
+  "seo": {
+    "ogTitle": "Rafael Ramos — Senior Android & Flutter Developer",
+    "ogDescription": "Senior Android Developer specialized in Kotlin, architecture, and performance.",
+    "ogImage": "https://rafaz.dev/assets/preview.png",
+    "schemaJobTitle": "Senior Android Developer"
+  },
+  "projects": [
+    {
+      "id": "open-cv",
+      "name": "Open CV",
+      "description": "Public JSON schema to centralize professional background, consumed by the website and app.",
+      "url": "https://rafaz.dev/open-cv.json",
+      "tags": [
+        "open-source",
+        "JSON",
+        "GitHub Pages"
+      ]
+    }
+  ]
+}

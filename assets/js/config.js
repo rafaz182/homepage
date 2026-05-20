@@ -9,5 +9,5 @@ export const STORAGE_KEYS = {
 
 export const DATA_PATHS = {
   ui: (locale) => `data/ui.${locale}.json`,
-  cv: (locale) => `data/resume-${locale}.json`,
+  cv: (locale) => `data/resume.${locale}.json`,
 };

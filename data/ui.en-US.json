@@ -6,10 +6,15 @@
     "about": "About"
   },
   "actions": {
-    "downloadPdf": "download pdf",
-    "exportResume": "export resume.pdf",
+    "downloadPdf": "⬇ pdf",
+    "exportResume": "⬇ export resume.pdf",
     "themeDark": "theme: dark",
-    "themeLight": "theme: light"
+    "themeLight": "theme: light",
+    "exportResumeAria": "Export resume as PDF",
+    "buildingPdf": "building...",
+    "done": "done ✓",
+    "failed": "failed — check console",
+    "pdfmakeNotLoaded": "pdfmake not loaded"
   },
   "home": {
     "snapshot": "snapshot",
@@ -19,22 +24,54 @@
     "about": "whoami",
     "careerCard": "Timeline, impact and stack by company.",
     "blogCard": "Posts and notes. (TODO)",
-    "aboutCard": "Summary, interests and contact."
+    "aboutCard": "Summary, interests and contact.",
+    "path": "/home",
+    "snapshotDescription": "Experience across banking, retail, and tailored solutions."
   },
   "footer": {
     "status": "status",
     "online": "online",
     "last": "last",
-    "theme": "theme"
+    "theme": "theme",
+    "stack": "stack"
   },
   "career": {
     "title": "Experience",
     "subtitle": "Timeline focused on impact, architecture and execution."
   },
   "about": {
-    "title": "who am i?",
+    "title": "whoami",
     "subtitle": "",
     "languages": "languages",
-    "contact": "contact"
+    "contact": "contact",
+    "sectionTitle": "About",
+    "profile": "profile",
+    "strengths": "strengths",
+    "stack": "stack"
+  },
+  "meta": {
+    "homeTitle": "Rafael Ramos — Homepage",
+    "homeDescription": "Senior Android Developer (Kotlin/Java). Career, blog, and about.",
+    "aboutTitle": "About — Rafael Ramos",
+    "aboutDescription": "Professional summary, interests, and contact.",
+    "ogTitle": "Rafael Ramos — Android Consultant",
+    "ogDescription": "Senior Android Developer specialized in Kotlin, architecture, and performance.",
+    "title": "Rafael Ramos — Homepage",
+    "description": "Senior Android Developer (Kotlin/Java). Career, blog, and about."
+  },
+  "aria": {
+    "navigation": "Navigation",
+    "statusbar": "Status bar"
+  },
+  "paths": {
+    "home": "/home",
+    "about": "/about"
+  },
+  "skills": {
+    "languages": "languages",
+    "platforms": "platforms",
+    "architecture": "architecture",
+    "tools": "tools",
+    "practices": "practices"
   }
 }

@@ -1,10 +1,4 @@
 {
-  "meta": {
-    "title": "Rafael Ramos — Homepage",
-    "description": "Senior Android Developer (Kotlin/Java). Carreira, blog e sobre.",
-    "ogTitle": "Rafael Ramos — Android Consultant",
-    "ogDescription": "Senior Android Developer especializado em Kotlin, arquitetura e performance."
-  },
   "nav": {
     "home": "Início",
     "career": "Carreira",
@@ -14,50 +8,70 @@
   "actions": {
     "downloadPdf": "⬇ pdf",
     "exportResume": "⬇ exportar currículo.pdf",
-    "exportResumeAria": "Exportar currículo em PDF",
     "themeDark": "theme: dark",
     "themeLight": "theme: light",
+    "exportResumeAria": "Exportar currículo em PDF",
     "buildingPdf": "gerando...",
     "done": "pronto ✓",
-    "failed": "falhou — veja o console",
-    "pdfmakeNotLoaded": "pdfmake não carregado"
+    "failed": "falhou — ver console",
+    "pdfmakeNotLoaded": "pdfmake não carregou"
   },
   "home": {
-    "path": "/home",
     "snapshot": "snapshot",
-    "snapshotTitle": "10+ anos em mobile",
-    "snapshotDescription": "Experiência em bancos, varejo e soluções sob medida.",
     "now": "agora",
     "career": "go",
-    "blog": "read",
+    "blog": "blog",
     "about": "whoami",
-    "careerTitle": "Carreira",
-    "blogTitle": "Blog",
-    "aboutTitle": "Sobre",
     "careerCard": "Timeline, impacto e stack por empresa.",
     "blogCard": "Posts e anotações. (TODO)",
-    "aboutCard": "Resumo, interesses e contato."
+    "aboutCard": "Resumo, interesses e contato.",
+    "path": "/home",
+    "snapshotDescription": "Experiência em bancos, varejo e soluções sob medida."
   },
-  "status": {
-    "label": "Barra de status",
+  "footer": {
     "status": "status",
     "online": "online",
     "last": "last",
-    "timezone": "tz",
-    "stack": "stack",
-    "theme": "theme"
-  },
-  "footer": {
-    "tagline": "personal homepage / portfolio"
+    "theme": "theme",
+    "stack": "stack"
   },
   "career": {
     "title": "Experiências",
     "subtitle": "Timeline focada em impacto, arquitetura e execução."
   },
   "about": {
-    "title": "who am i?",
+    "title": "whoami",
     "subtitle": "",
     "languages": "idiomas",
-    "contact": "contato"
+    "contact": "contato",
+    "sectionTitle": "Sobre",
+    "profile": "profile",
+    "strengths": "strengths",
+    "stack": "stack"
+  },
+  "meta": {
+    "homeTitle": "Rafael Ramos — Homepage",
+    "homeDescription": "Senior Android Developer (Kotlin/Java). Carreira, blog e sobre.",
+    "aboutTitle": "Sobre — Rafael Ramos",
+    "aboutDescription": "Resumo profissional, interesses e contato.",
+    "ogTitle": "Rafael Ramos — Android Consultant",
+    "ogDescription": "Senior Android Developer especializado em Kotlin, arquitetura e performance.",
+    "title": "Rafael Ramos — Homepage",
+    "description": "Senior Android Developer (Kotlin/Java). Carreira, blog e sobre."
+  },
+  "aria": {
+    "navigation": "Navegação",
+    "statusbar": "Barra de status"
+  },
+  "paths": {
+    "home": "/home",
+    "about": "/sobre"
+  },
+  "skills": {
+    "languages": "linguagens",
+    "platforms": "plataformas",
+    "architecture": "arquitetura",
+    "tools": "ferramentas",
+    "practices": "práticas"
   }
 }

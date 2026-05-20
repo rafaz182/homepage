@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sobre — Rafael Ramos</title>
-  <meta name="description" content="Resumo profissional, interesses e contato." />
+  <title data-i18n="meta.aboutTitle">Sobre — Rafael Ramos</title>
+  <meta name="description" content="Resumo profissional, interesses e contato." data-i18n-attr="content:meta.aboutDescription" />
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Rafael Ramos — Android Consultant">
-  <meta property="og:description"
-    content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
+  <meta property="og:title" content="Rafael Ramos — Android Consultant" data-i18n-attr="content:meta.ogTitle">
+  <meta property="og:description" content="Senior Android Developer especializado em Kotlin, arquitetura e performance." data-i18n-attr="content:meta.ogDescription">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rafaz.dev/sobre.html">
   <meta property="og:image" content="https://rafaz.dev/assets/preview.png">
@@ -25,13 +24,13 @@
   </script>
 </head>
 
-<body>
+<body data-page="about">
 
   <div class="topbarMobile">
     <div class="wrap">
       <div class="pill" style="gap:10px;">
         <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
-        <span style="font-family:var(--mono);color:var(--muted);">/sobre</span>
+        <span style="font-family:var(--mono);color:var(--muted);" data-i18n="paths.about">/sobre</span>
       </div>
       <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
     </div>
@@ -46,11 +45,11 @@
           <p id="sidebar-subtitle">Senior Android • Kotlin/Java • SP</p>
         </div>
       </div>
-      <nav class="nav" aria-label="Navegação">
-        <a data-nav href="index.html">Início <span>00</span></a>
-        <a data-nav href="carreira.html">Carreira <span>01</span></a>
-        <a data-nav href="blog.html">Blog <span>02</span></a>
-        <a data-nav href="sobre.html">Sobre <span>03</span></a>
+      <nav class="nav" aria-label="Navegação" data-i18n-attr="aria-label:aria.navigation">
+        <a data-nav href="index.html"><span data-i18n="nav.home">Início</span> <span>00</span></a>
+        <a data-nav href="carreira.html"><span data-i18n="nav.career">Carreira</span> <span>01</span></a>
+        <a data-nav href="blog.html"><span data-i18n="nav.blog">Blog</span> <span>02</span></a>
+        <a data-nav href="sobre.html"><span data-i18n="nav.about">Sobre</span> <span>03</span></a>
       </nav>
       <div class="sidebarFooter">
         <div class="kbdRow">
@@ -58,8 +57,8 @@
           <div class="row"><span>linkedin</span><a id="sidebar-linkedin" href="#" rel="noreferrer">—</a></div>
           <div class="row"><span>github</span><a id="sidebar-github" href="#" rel="noreferrer">—</a></div>
         </div>
-        <button class="btn" type="button" data-export-resume aria-label="Exportar currículo em PDF">
-          ⬇ export resume.pdf
+        <button class="btn" type="button" data-export-resume aria-label="Exportar currículo em PDF" data-i18n="actions.exportResume" data-i18n-attr="aria-label:actions.exportResumeAria">
+          exportar currículo.pdf
         </button>
         <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
       </div>
@@ -67,41 +66,41 @@
 
     <main class="main">
       <div class="card">
-        <p class="sectionTitle">Sobre</p>
-        <h2 class="h1" style="font-size:36px;margin-bottom:6px;">whoami</h2>
+        <p class="sectionTitle" data-i18n="about.sectionTitle">Sobre</p>
+        <h2 class="h1" style="font-size:36px;margin-bottom:6px;" data-i18n="about.title">whoami</h2>
 
         <div class="tile" style="margin-top:14px;">
-          <div class="t">profile</div>
+          <div class="t" data-i18n="about.profile">profile</div>
           <p class="d" id="bio-main" style="margin:0;color:var(--text);">—</p>
           <p class="d" id="bio-interests" style="margin:10px 0 0;color:var(--muted);">—</p>
         </div>
 
         <div class="grid2">
           <div class="tile">
-            <div class="t">strengths</div>
+            <div class="t" data-i18n="about.strengths">strengths</div>
             <p class="d" id="strengths" style="margin:0;">—</p>
           </div>
           <div class="tile">
-            <div class="t">languages</div>
+            <div class="t" data-i18n="about.languages">languages</div>
             <p class="d" id="spoken-languages" style="margin:0;">—</p>
           </div>
         </div>
 
         <div class="tile" style="margin-top:16px;">
-          <div class="t">stack</div>
+          <div class="t" data-i18n="about.stack">stack</div>
           <div id="skills-block" style="margin:0;">—</div>
         </div>
 
         <div class="tile" style="margin-top:16px;">
-          <div class="t">contact</div>
+          <div class="t" data-i18n="about.contact">contact</div>
           <p class="d" id="contact-block" style="margin:0;">—</p>
         </div>
 
-        <div class="statusbar" role="status" aria-label="Barra de status">
-          <span><b>status</b>: /sobre</span>
-          <span><b>last</b>: <span data-status-last>—</span></span>
+        <div class="statusbar" role="status" aria-label="Barra de status" data-i18n-attr="aria-label:aria.statusbar">
+          <span><b data-i18n="footer.status">status</b>: <span data-i18n="paths.about">/sobre</span></span>
+          <span><b data-i18n="footer.last">last</b>: <span data-status-last>—</span></span>
           <span><b>tz</b>: <span data-status-tz>—</span></span>
-          <span><b>theme</b>: <span data-status-theme>dark</span></span>
+          <span><b data-i18n="footer.theme">theme</b>: <span data-status-theme>dark</span></span>
         </div>
 
         <div class="footer">
@@ -114,104 +113,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.js"></script>
-  <script src="assets/main.js"></script>
-  <script>
-    (async function () {
-      const CV_URL = "/open-cv.json";
-
-      function levelLabel(level) {
-        const map = {
-          native: "nativo",
-          fluent: "fluente",
-          full_professional: "full professional",
-          professional: "professional",
-          advanced: "avançado",
-          intermediate: "intermediário",
-        };
-        return map[level] || level;
-      }
-
-      function populateSidebar(profile) {
-        const { name, title, location, links } = profile;
-        document.getElementById("sidebar-name").textContent = name;
-        document.getElementById("sidebar-subtitle").textContent = `${title} • ${location}`;
-
-        const emailEl = document.getElementById("sidebar-email");
-        emailEl.textContent = links.email;
-        emailEl.href = `mailto:${links.email}`;
-
-        const linkedinEl = document.getElementById("sidebar-linkedin");
-        linkedinEl.textContent = links.linkedin.replace("https://linkedin.com", "");
-        linkedinEl.href = links.linkedin;
-
-        const githubEl = document.getElementById("sidebar-github");
-        githubEl.textContent = links.github.replace("https://github.com", "");
-        githubEl.href = links.github;
-      }
-
-      function populateSobre(cv) {
-        const { profile, skills, languages } = cv;
-
-        // Bio
-        document.getElementById("bio-main").textContent =
-          profile.bio || "Software engineer com mais de oito anos de experiência focada em apps mobile.";
-        document.getElementById("bio-interests").textContent =
-          profile.interests || "Interesses: Design Patterns, Concurrency e Code Architecture.";
-
-        // Strengths
-        const strengthsEl = document.getElementById("strengths");
-        if (Array.isArray(profile.strengths) && profile.strengths.length) {
-          strengthsEl.textContent = profile.strengths.join(", ") + ".";
-        } else {
-          strengthsEl.textContent =
-            "UI complexa, search/filter/sort client-side, notificações, deep links, caching e componentes custom.";
-        }
-
-        // Spoken languages
-        const langText = languages
-          .map(l => `${l.language}: ${levelLabel(l.level)}`)
-          .join(" • ");
-        document.getElementById("spoken-languages").textContent = langText || "—";
-
-        // Skills block
-        const skillsEl = document.getElementById("skills-block");
-        const rows = [
-          { label: "linguagens", values: skills.languages },
-          { label: "plataformas", values: skills.platforms },
-          { label: "arquitetura", values: skills.architecture },
-          { label: "ferramentas", values: skills.tools },
-          { label: "práticas", values: skills.practices },
-        ];
-        skillsEl.innerHTML = rows.map(r =>
-          `<p style="margin:4px 0;font-size:13px;">
-        <span style="color:var(--muted);min-width:90px;display:inline-block;">${r.label}</span>
-        ${r.values.join(" • ")}
-      </p>`
-        ).join("");
-
-        // Contact
-        const { links } = profile;
-        document.getElementById("contact-block").innerHTML =
-          `email: <a href="mailto:${links.email}">${links.email}</a><br/>
-       linkedin: <a href="${links.linkedin}" rel="noreferrer">${links.linkedin}</a><br/>
-       github: <a href="${links.github}" rel="noreferrer">${links.github}</a>`;
-
-        // Footer stack
-        const stackStr = [...skills.languages, ...skills.platforms].join(" • ");
-        document.getElementById("footer-stack").textContent = `stack: ${stackStr}`;
-      }
-
-      try {
-        const res = await fetch(CV_URL);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const cv = await res.json();
-        populateSidebar(cv.profile);
-        populateSobre(cv);
-      } catch (err) {
-        console.error("[open-cv] falha ao carregar:", err);
-      }
-    })();
-  </script>
+  <script type="module" src="assets/main.js"></script>
 
 </body>
 

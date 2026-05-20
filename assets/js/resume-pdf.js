@@ -1,7 +1,7 @@
 import { DATA_PATHS } from "./config.js";
 
 /* =========================================================
- *  Resume PDF Export (open-cv.json -> pdfmake)
+ *  Resume PDF Export (data/resume.{locale}.json -> pdfmake)
  *  Schema: profile / experience / skills (5 buckets) / languages
  *  - 5 experiências mais recentes
  *  - Education com fallback hardcoded (IFSP) se JSON vier vazio
