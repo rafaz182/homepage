@@ -205,74 +205,91 @@
 
   function sectionTitle(text) {
     return {
-      margin: [0, 12, 0, 6],
+      margin: [0, 10, 0, 5],
       table: {
         widths: ['*'],
-        body: [[{ text: text.toUpperCase(), fontSize: 13, bold: true, color: DARK }]]
+        body: [[{ text: text.toUpperCase(), fontSize: 11, bold: true, color: DARK }]]
       },
       layout: {
         hLineWidth: (i) => (i === 1 ? 1 : 0),
         vLineWidth: () => 0,
         hLineColor: () => '#000000',
         paddingLeft: () => 0, paddingRight: () => 0,
-        paddingTop: () => 0,  paddingBottom: () => 3
+        paddingTop: () => 0,  paddingBottom: () => 2
       }
     };
   }
 
   function workBlock(job, isLast) {
     const stack = [
-      { text: job.role || '',    fontSize: 11, bold: true, color: DARK },
-      { text: job.company || '', fontSize: 10, bold: true, color: BLUE, margin: [0, 1, 0, 1] },
+      { text: job.role || '',    fontSize: 9.5, bold: true, color: DARK },
+      { text: job.company || '', fontSize: 9,   bold: true, color: BLUE, margin: [0, 1, 0, 1] },
       {
         text: `${fmtDate(job.startDate)} - ${fmtDate(job.endDate)}     ${job.location || ''}`,
-        fontSize: 8.5, color: MUTED, margin: [0, 0, 0, 3]
+        fontSize: 7.5, color: MUTED, margin: [0, 0, 0, 2]
       }
     ];
     if (job.companyDescription) {
-      stack.push({ text: job.companyDescription, fontSize: 9, color: '#444', margin: [0, 0, 0, 2] });
+      stack.push({ text: job.companyDescription, fontSize: 8, color: '#444', margin: [0, 0, 0, 2] });
     }
     if (Array.isArray(job.highlights) && job.highlights.length) {
       stack.push({
-        ul: job.highlights.map(h => ({ text: h, fontSize: 9, color: '#222' })),
-        margin: [0, 2, 0, 0]
+        ul: job.highlights.map(h => ({ text: h, fontSize: 8, color: '#222', lineHeight: 1.15 })),
+        margin: [0, 1, 0, 0]
       });
     }
-    return { stack, margin: [0, 0, 0, isLast ? 0 : 10] };
+    return { stack, margin: [0, 0, 0, isLast ? 0 : 6] };
   }
 
   function educationBlock(edu) {
     return {
       stack: [
-        { text: edu.studyType || edu.area || '', fontSize: 10.5, bold: true, color: DARK },
-        { text: edu.institution || '', fontSize: 9.5, bold: true, color: BLUE, margin: [0, 1, 0, 1] },
+        { text: edu.studyType || edu.area || '', fontSize: 9.5, bold: true, color: DARK },
+        { text: edu.institution || '', fontSize: 9, bold: true, color: BLUE, margin: [0, 1, 0, 1] },
         {
           text: `${fmtDate(edu.startDate)} - ${fmtDate(edu.endDate)}     ${edu.location || ''}`,
-          fontSize: 8.5, color: MUTED
+          fontSize: 7.5, color: MUTED
         }
       ],
-      margin: [0, 0, 0, 10]
+      margin: [0, 0, 0, 6]
     };
   }
 
   function chipsTable(chips) {
+    const H_GAP = 5; // espaçamento horizontal entre chips
+    const V_GAP = 4; // espaçamento vertical entre linhas
     const rows = [];
     for (let i = 0; i < chips.length; i += 2) {
       const a = chips[i];
       const b = chips[i + 1];
-      rows.push([
-        { text: a, fontSize: 9, alignment: 'center', color: DARK },
-        b ? { text: b, fontSize: 9, alignment: 'center', color: DARK }
-          : { text: '', border: [false, false, false, false] }
-      ]);
+      rows.push({
+        columns: [
+          chipCell(a),
+          { width: H_GAP, text: '' },
+          b ? chipCell(b) : { width: '*', text: '' }
+        ],
+        margin: [0, 0, 0, V_GAP]
+      });
     }
+    return { stack: rows };
+  }
+
+  function chipCell(text) {
     return {
-      table: { widths: ['*', '*'], body: rows },
+      width: '*',
+      table: {
+        widths: ['*'],
+        body: [[{ text, fontSize: 7.5, alignment: 'center', color: DARK }]]
+      },
       layout: {
-        hLineWidth: () => 0.6, vLineWidth: () => 0.6,
-        hLineColor: () => CHIP, vLineColor: () => CHIP,
-        paddingTop: () => 4,  paddingBottom: () => 4,
-        paddingLeft: () => 4, paddingRight: () => 4
+        hLineWidth: () => 1,
+        vLineWidth: () => 1,
+        hLineColor: () => CHIP,
+        vLineColor: () => CHIP,
+        paddingTop:    () => 3,
+        paddingBottom: () => 3,
+        paddingLeft:   () => 4,
+        paddingRight:  () => 4
       }
     };
   }
@@ -324,7 +341,6 @@
       : EDU_FALLBACK;
 
     const linkedinShort = links.linkedin ? links.linkedin.replace(/^https?:\/\//, '') : '';
-    const websiteShort  = links.website  ? links.website.replace(/^https?:\/\//, '')  : '';
 
     const headerText = {
       width: '*',
@@ -333,13 +349,13 @@
         { text: p.title || '', fontSize: 12, bold: true, color: BLUE, margin: [0, 2, 0, 8] },
         {
           columns: [
-            { text: links.email || '', fontSize: 9, color: DARK },
-            { text: websiteShort,      fontSize: 9, color: DARK }
+            { text: p.phone || '',     fontSize: 9, color: DARK },
+            { text: links.email || '', fontSize: 9, color: DARK }
           ]
         },
         {
           columns: [
-            { text: linkedinShort, fontSize: 9, color: DARK },
+            { text: linkedinShort,    fontSize: 9, color: DARK },
             { text: p.location || '', fontSize: 9, color: DARK }
           ],
           margin: [0, 3, 0, 0]
