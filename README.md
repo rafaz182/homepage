@@ -51,3 +51,16 @@ O roteamento da página fica em `assets/main.js`, e a renderização específica
 ## Regra seguida nesta rodada
 
 Strings existentes em `ui.*.json` e `resume.*.json` não foram alteradas. Foram adicionadas apenas novas chaves necessárias para remover strings hardcoded do `carreira.html`.
+
+## Language switcher
+
+The language selector is rendered with `select[data-locale-switcher]` in `index.html`, `carreira.html`, and `sobre.html`.
+
+Initial locale resolution is handled in `assets/js/i18n.js` by `getCurrentLocale()`:
+
+1. `?lang=pt-BR` or `?lang=en-US` in the URL;
+2. `localStorage.rafaz_locale`, only after the user manually changes the selector;
+3. `navigator.languages` / `navigator.language`;
+4. `DEFAULT_LOCALE` from `assets/js/config.js`.
+
+Changing the selector persists the chosen locale and updates the current URL with `?lang=<locale>`.

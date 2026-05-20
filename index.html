@@ -32,8 +32,10 @@
         <span style="font-family:var(--mono);color:var(--muted);" data-i18n="home.path">/home</span>
       </div>
       <div class="pill" style="gap:6px;">
-        <button class="btn" type="button" data-locale-switch="pt-BR">PT</button>
-        <button class="btn" type="button" data-locale-switch="en-US">EN</button>
+        <select class="btn" type="button" data-locale-switcher aria-label="Selecionar idioma" data-i18n-attr="aria-label:actions.languageSwitcherAria">
+          <option value="pt-BR">PT</option>
+          <option value="en-US">EN</option>
+        </select>
       </div>
       <button class="btn" type="button" data-theme-toggle aria-pressed="true" data-i18n="actions.themeDark">theme: dark</button>
       <button class="btn" type="button" data-export-resume data-i18n="actions.downloadPdf" data-i18n-attr="aria-label:actions.exportResumeAria" aria-label="Exportar currículo em PDF">
@@ -67,8 +69,10 @@
         </div>
 
         <div class="pill" style="gap:6px;">
-          <button class="btn" type="button" data-locale-switch="pt-BR">PT</button>
-          <button class="btn" type="button" data-locale-switch="en-US">EN</button>
+          <select class="btn" data-locale-switcher aria-label="Selecionar idioma" data-i18n-attr="aria-label:actions.languageSwitcherAria">
+            <option value="pt-BR">PT</option>
+            <option value="en-US">EN</option>
+          </select>
         </div>
 
         <button class="btn" type="button" data-export-resume data-i18n="actions.exportResume" data-i18n-attr="aria-label:actions.exportResumeAria" aria-label="Exportar currículo em PDF">

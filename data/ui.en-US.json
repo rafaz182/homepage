@@ -14,7 +14,8 @@
     "buildingPdf": "building...",
     "done": "done ✓",
     "failed": "failed — check console",
-    "pdfmakeNotLoaded": "pdfmake not loaded"
+    "pdfmakeNotLoaded": "pdfmake not loaded",
+    "languageSwitcherAria": "Select language"
   },
   "home": {
     "snapshot": "snapshot",
@@ -97,5 +98,10 @@
       "Nov",
       "Dec"
     ]
+  },
+  "language": {
+    "label": "Language",
+    "portuguese": "Portuguese",
+    "english": "English"
   }
 }

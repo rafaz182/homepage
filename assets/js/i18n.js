@@ -3,9 +3,9 @@ import { getByPath } from "./dom.js";
 
 export function getCurrentLocale() {
   const params = new URLSearchParams(window.location.search);
-  const urlLocale = params.get("lang");
-  const savedLocale = localStorage.getItem(STORAGE_KEYS.locale);
-  const browserLocale = normalizeLocale(navigator.language);
+  const urlLocale = normalizeLocale(params.get("lang"));
+  const savedLocale = normalizeLocale(localStorage.getItem(STORAGE_KEYS.locale));
+  const browserLocale = getBrowserLocale();
 
   if (SUPPORTED_LOCALES.includes(urlLocale)) return urlLocale;
   if (SUPPORTED_LOCALES.includes(savedLocale)) return savedLocale;
@@ -14,13 +14,28 @@ export function getCurrentLocale() {
   return DEFAULT_LOCALE;
 }
 
+export function getBrowserLocale() {
+  const candidates = [
+    ...(Array.isArray(navigator.languages) ? navigator.languages : []),
+    navigator.language,
+  ].filter(Boolean);
+
+  for (const candidate of candidates) {
+    const normalized = normalizeLocale(candidate);
+    if (SUPPORTED_LOCALES.includes(normalized)) return normalized;
+  }
+
+  return DEFAULT_LOCALE;
+}
+
 export function normalizeLocale(locale) {
-  if (!locale) return DEFAULT_LOCALE;
+  if (!locale) return "";
+
   const exact = SUPPORTED_LOCALES.find((item) => item.toLowerCase() === locale.toLowerCase());
   if (exact) return exact;
 
   const language = locale.split("-")[0].toLowerCase();
-  return SUPPORTED_LOCALES.find((item) => item.toLowerCase().startsWith(`${language}-`)) || DEFAULT_LOCALE;
+  return SUPPORTED_LOCALES.find((item) => item.toLowerCase().startsWith(`${language}-`)) || "";
 }
 
 export function applyI18n(ui) {
@@ -41,6 +56,15 @@ export function applyI18n(ui) {
 }
 
 export function initLocaleSwitcher(currentLocale) {
+  document.querySelectorAll("[data-locale-switcher]").forEach((select) => {
+    select.value = currentLocale;
+
+    select.addEventListener("change", () => {
+      changeLocale(select.value, currentLocale);
+    });
+  });
+
+  // Compatibility with the old button-based implementation.
   document.querySelectorAll("[data-locale-switch]").forEach((button) => {
     const locale = button.dataset.localeSwitch;
     const isCurrent = locale === currentLocale;
@@ -49,13 +73,20 @@ export function initLocaleSwitcher(currentLocale) {
     button.classList.toggle("active", isCurrent);
 
     button.addEventListener("click", () => {
-      if (!SUPPORTED_LOCALES.includes(locale)) return;
-
-      localStorage.setItem(STORAGE_KEYS.locale, locale);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", locale);
-      window.location.href = url.toString();
+      changeLocale(locale, currentLocale);
     });
   });
+}
+
+function changeLocale(locale, currentLocale) {
+  const normalized = normalizeLocale(locale);
+
+  if (!SUPPORTED_LOCALES.includes(normalized)) return;
+  if (normalized === currentLocale) return;
+
+  localStorage.setItem(STORAGE_KEYS.locale, normalized);
+
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", normalized);
+  window.location.href = url.toString();
 }
