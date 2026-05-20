@@ -301,7 +301,7 @@
               fontSize: 7.5,
               color: MUTED
             },
-            { width: 12, text: '' },
+            { width: 8, text: '' },
             {
               width: 'auto',
               columns: [
