@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "home": "Home",
+    "career": "Career",
+    "blog": "Blog",
+    "about": "About"
+  },
+  "actions": {
+    "downloadPdf": "download pdf",
+    "exportResume": "export resume.pdf",
+    "themeDark": "theme: dark",
+    "themeLight": "theme: light"
+  },
+  "home": {
+    "snapshot": "snapshot",
+    "now": "now",
+    "career": "go",
+    "blog": "blog",
+    "about": "whoami",
+    "careerCard": "Timeline, impact and stack by company.",
+    "blogCard": "Posts and notes. (TODO)",
+    "aboutCard": "Summary, interests and contact."
+  },
+  "footer": {
+    "status": "status",
+    "online": "online",
+    "last": "last",
+    "theme": "theme"
+  },
+  "career": {
+    "title": "Experience",
+    "subtitle": "Timeline focused on impact, architecture and execution."
+  },
+  "about": {
+    "title": "who am i?",
+    "subtitle": "",
+    "languages": "languages",
+    "contact": "contact"
+  }
+}
