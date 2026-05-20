@@ -110,32 +110,41 @@
     'elementary': 1
   };
 
-  const btn = document.getElementById('exportResumeBtn');
-  const status = document.getElementById('exportResumeStatus');
-  if (!btn) return;
+  const ICONS = {
+    phone: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1f1f1f" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A18 18 0 0 1 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>',
+    email: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1f1f1f" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 4v10h16V8l-8 5-8-5z"/></svg>',
+    link:  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="#1f1f1f" stroke-width="2" stroke-linecap="round" d="M10.6 13.4a3 3 0 0 0 4.24 0l3-3a3 3 0 0 0-4.24-4.24l-1.5 1.5M13.4 10.6a3 3 0 0 0-4.24 0l-3 3a3 3 0 0 0 4.24 4.24l1.5-1.5"/></svg>',
+    pin:   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#1f1f1f" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>'
+  };
 
-  btn.addEventListener('click', async () => {
-    if (typeof pdfMake === 'undefined') { setStatus('pdfmake not loaded'); return; }
+  const btns = document.querySelectorAll('[data-export-resume]');
+  if (!btns.length) return;
+
+  btns.forEach(btn => btn.addEventListener('click', async (e) => {
+    const b = e.currentTarget;
+    const originalText = b.textContent;
+    if (typeof pdfMake === 'undefined') {
+      b.textContent = 'pdfmake not loaded';
+      setTimeout(() => { b.textContent = originalText; }, 2000);
+      return;
+    }
     try {
-      setStatus('building...');
-      btn.disabled = true;
+      b.disabled = true;
+      b.textContent = 'building...';
       const cv = await fetchCv();
       const avatar = await tryFetchAvatar(GRAVATAR_URL);
       const docDef = buildResumeDocDef(cv, avatar);
       const filename = `${(cv.profile?.name || 'resume').replace(/\s+/g, '_')}_Resume.pdf`;
       pdfMake.createPdf(docDef).download(filename, () => {
-        setStatus('done ✓');
-        btn.disabled = false;
-        setTimeout(() => setStatus(''), 2500);
+        b.textContent = 'done ✓';
+        setTimeout(() => { b.textContent = originalText; b.disabled = false; }, 2000);
       });
     } catch (err) {
       console.error('[resume-pdf]', err);
-      setStatus('failed — check console');
-      btn.disabled = false;
+      b.textContent = 'failed — check console';
+      setTimeout(() => { b.textContent = originalText; b.disabled = false; }, 2500);
     }
-  });
-
-  function setStatus(msg) { if (status) status.textContent = msg; }
+  }));
 
   async function fetchCv() {
     const res = await fetch('open-cv.json', { cache: 'no-store' });
@@ -314,7 +323,6 @@
   function languageBlock(lang) {
     const key = String(lang.level || '').toLowerCase();
     const lvl = LANG_LEVEL_MAP[key] || 3;
-    const dots = '●'.repeat(lvl) + '○'.repeat(5 - lvl);
     return {
       columns: [
         {
@@ -324,10 +332,29 @@
             { text: lang.level || '',    fontSize: 9, color: MUTED }
           ]
         },
-        { width: 'auto', text: dots, fontSize: 10, color: BLUE, alignment: 'right', margin: [0, 4, 0, 0] }
+        { width: 'auto', stack: [dotsCanvas(lvl)], alignment: 'right', margin: [0, 9, 0, 0] }
       ],
       margin: [0, 4, 0, 8]
     };
+  }
+
+  function dotsCanvas(lvl, total = 5) {
+    const r = 2.5;     // raio do dot
+    const gap = 3;     // espaço entre dots
+    const elems = [];
+    for (let i = 0; i < total; i++) {
+      const filled = i < lvl;
+      elems.push({
+        type: 'ellipse',
+        x: i * (r * 2 + gap) + r,
+        y: r,
+        r1: r, r2: r,
+        color: filled ? BLUE : '#ffffff',
+        lineColor: BLUE,
+        lineWidth: 0.8
+      });
+    }
+    return { canvas: elems };
   }
 
   /* ---------- doc definition ---------- */
@@ -349,14 +376,14 @@
         { text: p.title || '', fontSize: 12, bold: true, color: BLUE, margin: [0, 2, 0, 8] },
         {
           columns: [
-            { text: p.phone || '',     fontSize: 9, color: DARK },
-            { text: links.email || '', fontSize: 9, color: DARK }
+            iconText(ICONS.phone, p.phone),
+            iconText(ICONS.email, links.email)
           ]
         },
         {
           columns: [
-            { text: linkedinShort,    fontSize: 9, color: DARK },
-            { text: p.location || '', fontSize: 9, color: DARK }
+            iconText(ICONS.link, linkedinShort),
+            iconText(ICONS.pin,  p.location)
           ],
           margin: [0, 3, 0, 0]
         }
@@ -404,6 +431,16 @@
       pageMargins: [40, 40, 40, 40],
       content: [header, body],
       defaultStyle: { font: 'Roboto', color: DARK }
+    };
+  }
+
+  function iconText(svg, text) {
+    return {
+      width: '*',
+      columns: [
+        { width: 11, svg, fit: [9, 9], margin: [0, 1, 0, 0] },
+        { width: '*', text: text || '', fontSize: 9, color: DARK, margin: [4, 0, 0, 0] }
+      ]
     };
   }
 })();

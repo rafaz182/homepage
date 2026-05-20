@@ -1,187 +1,198 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title id="page-title">Rafael Ramos — Homepage</title>
-<meta name="description" content="Senior Android Developer (Kotlin/Java). Carreira, blog e sobre." />
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Rafael Ramos — Android Consultant">
-<meta property="og:description" content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://rafaz.dev/">
-<meta property="og:image" content="https://rafaz.dev/assets/preview.png">
-<link rel="icon" href="assets/favicon.svg" />
-<link rel="stylesheet" href="assets/style.css" />
-<script>
-(function(){
-  const k = "rafaz_theme";
-  const s = localStorage.getItem(k);
-  const p = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", (s === "dark" || s === "light") ? s : p);
-})();
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title id="page-title">Rafael Ramos — Homepage</title>
+  <meta name="description" content="Senior Android Developer (Kotlin/Java). Carreira, blog e sobre." />
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Rafael Ramos — Android Consultant">
+  <meta property="og:description"
+    content="Senior Android Developer especializado em Kotlin, arquitetura e performance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rafaz.dev/">
+  <meta property="og:image" content="https://rafaz.dev/assets/preview.png">
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    (function () {
+      const k = "rafaz_theme";
+      const s = localStorage.getItem(k);
+      const p = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", (s === "dark" || s === "light") ? s : p);
+    })();
+  </script>
 </head>
+
 <body>
 
-<div class="topbarMobile">
-  <div class="wrap">
-    <div class="pill" style="gap:10px;">
-      <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
-      <span style="font-family:var(--mono);color:var(--muted);">/home</span>
-    </div>
-    <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
-  </div>
-</div>
-
-<div class="container">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="avatar" aria-hidden="true">&gt;_</div>
-      <div>
-        <h1 id="sidebar-name">Rafael Ramos</h1>
-        <p id="sidebar-subtitle">Senior Android • Kotlin/Java • SP</p>
-      </div>
-    </div>
-    <nav class="nav" aria-label="Navegação">
-      <a data-nav href="index.html">Início <span>00</span></a>
-      <a data-nav href="carreira.html">Carreira <span>01</span></a>
-      <a data-nav href="blog.html">Blog <span>02</span></a>
-      <a data-nav href="sobre.html">Sobre <span>03</span></a>
-    </nav>
-    <div class="sidebarFooter">
-      <div class="kbdRow">
-        <div class="row"><span>email</span><a id="sidebar-email" href="#">—</a></div>
-        <div class="row"><span>linkedin</span><a id="sidebar-linkedin" href="#" rel="noreferrer">—</a></div>
-        <div class="row"><span>github</span><a id="sidebar-github" href="#" rel="noreferrer">—</a></div>
+  <div class="topbarMobile">
+    <div class="wrap">
+      <div class="pill" style="gap:10px;">
+        <span style="font-family:var(--mono);color:var(--accent-2);">rafaz.dev</span>
+        <span style="font-family:var(--mono);color:var(--muted);">/home</span>
       </div>
       <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
+      <button class="btn" type="button" data-export-resume aria-label="Exportar currículo">
+        ⬇ pdf
+      </button>
     </div>
-  </aside>
+  </div>
 
-  <main class="main">
-    <div class="card">
-      <h2 class="h1" id="hero-name">Rafael Ramos</h2>
-      <p class="sub" id="hero-sub">
-        Senior Android Developer (Kotlin/Java). Arquitetura, UI complexa, performance de build e liderança técnica.
-      </p>
-
-      <div class="grid2">
-        <div class="tile">
-          <div class="t">snapshot</div>
-          <p class="k" style="margin:0;" id="snapshot-title">10+ anos em mobile</p>
-          <p class="d" id="snapshot-desc">Experiência em bancos, varejo e soluções sob medida.</p>
-        </div>
-        <div class="tile">
-          <div class="t">agora</div>
-          <p class="k" style="margin:0;" id="now-company">—</p>
-          <p class="d" id="now-role">—</p>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true">&gt;_</div>
+        <div>
+          <h1 id="sidebar-name">Rafael Ramos</h1>
+          <p id="sidebar-subtitle">Senior Android • Kotlin/Java • SP</p>
         </div>
       </div>
-
-      <div class="gridCards" style="margin-top:14px;">
-        <a class="tile" href="carreira.html">
-          <div class="t">go</div>
-          <h3 class="k">Carreira</h3>
-          <p class="d">Timeline, impacto e stack por empresa.</p>
-        </a>
-        <a class="tile" href="blog.html">
-          <div class="t">read</div>
-          <h3 class="k">Blog</h3>
-          <p class="d">Posts e anotações (TODO).</p>
-        </a>
-        <a class="tile" href="sobre.html">
-          <div class="t">whoami</div>
-          <h3 class="k">Sobre</h3>
-          <p class="d">Resumo, interesses e contato.</p>
-        </a>
+      <nav class="nav" aria-label="Navegação">
+        <a data-nav href="index.html">Início <span>00</span></a>
+        <a data-nav href="carreira.html">Carreira <span>01</span></a>
+        <a data-nav href="blog.html">Blog <span>02</span></a>
+        <a data-nav href="sobre.html">Sobre <span>03</span></a>
+      </nav>
+      <div class="sidebarFooter">
+        <div class="kbdRow">
+          <div class="row"><span>email</span><a id="sidebar-email" href="#">—</a></div>
+          <div class="row"><span>linkedin</span><a id="sidebar-linkedin" href="#" rel="noreferrer">—</a></div>
+          <div class="row"><span>github</span><a id="sidebar-github" href="#" rel="noreferrer">—</a></div>
+        </div>
+        <button class="btn" type="button" data-export-resume aria-label="Exportar currículo em PDF">
+          ⬇ export resume.pdf
+        </button>
+        <button class="btn" data-theme-toggle aria-pressed="true">theme: dark</button>
       </div>
+    </aside>
 
-      <div class="statusbar" role="status" aria-label="Barra de status">
-        <span><b>status</b>: online</span>
-        <span><b>last</b>: <span data-status-last>—</span></span>
-        <span><b>tz</b>: <span data-status-tz>—</span></span>
-        <span><b>stack</b>: <span id="status-stack">Kotlin • Android • Compose</span></span>
-        <span><b>theme</b>: <span data-status-theme>dark</span></span>
+    <main class="main">
+      <div class="card">
+        <h2 class="h1" id="hero-name">Rafael Ramos</h2>
+        <p class="sub" id="hero-sub">
+          Senior Android Developer (Kotlin/Java). Arquitetura, UI complexa, performance de build e liderança técnica.
+        </p>
+
+        <div class="grid2">
+          <div class="tile">
+            <div class="t">snapshot</div>
+            <p class="k" style="margin:0;" id="snapshot-title">10+ anos em mobile</p>
+            <p class="d" id="snapshot-desc">Experiência em bancos, varejo e soluções sob medida.</p>
+          </div>
+          <div class="tile">
+            <div class="t">agora</div>
+            <p class="k" style="margin:0;" id="now-company">—</p>
+            <p class="d" id="now-role">—</p>
+          </div>
+        </div>
+
+        <div class="gridCards" style="margin-top:14px;">
+          <a class="tile" href="carreira.html">
+            <div class="t">go</div>
+            <h3 class="k">Carreira</h3>
+            <p class="d">Timeline, impacto e stack por empresa.</p>
+          </a>
+          <a class="tile" href="blog.html">
+            <div class="t">read</div>
+            <h3 class="k">Blog</h3>
+            <p class="d">Posts e anotações (TODO).</p>
+          </a>
+          <a class="tile" href="sobre.html">
+            <div class="t">whoami</div>
+            <h3 class="k">Sobre</h3>
+            <p class="d">Resumo, interesses e contato.</p>
+          </a>
+        </div>
+
+        <div class="statusbar" role="status" aria-label="Barra de status">
+          <span><b>status</b>: online</span>
+          <span><b>last</b>: <span data-status-last>—</span></span>
+          <span><b>tz</b>: <span data-status-tz>—</span></span>
+          <span><b>stack</b>: <span id="status-stack">Kotlin • Android • Compose</span></span>
+          <span><b>theme</b>: <span data-status-theme>dark</span></span>
+        </div>
+
+        <div class="footer">
+          <span>© <span id="y"></span> rafaz.dev</span>
+          <span style="color:var(--muted);">personal homepage / portfolio</span>
+        </div>
       </div>
+    </main>
+  </div>
 
-      <div class="footer">
-        <span>© <span id="y"></span> rafaz.dev</span>
-        <span style="color:var(--muted);">personal homepage / portfolio</span>
-      </div>
-    </div>
-  </main>
-</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.js"></script>
+  <script src="assets/main.js"></script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
 
-<script src="assets/main.js"></script>
-<script>
-document.getElementById("y").textContent = new Date().getFullYear();
+    (async function () {
+      const CV_URL = "/open-cv.json";
 
-(async function () {
-  const CV_URL = "/open-cv.json";
+      function populateSidebar(profile) {
+        const { name, title, location, links } = profile;
+        document.getElementById("sidebar-name").textContent = name;
+        document.getElementById("sidebar-subtitle").textContent = `${title} • ${location}`;
 
-  function populateSidebar(profile) {
-    const { name, title, location, links } = profile;
-    document.getElementById("sidebar-name").textContent     = name;
-    document.getElementById("sidebar-subtitle").textContent = `${title} • ${location}`;
+        const emailEl = document.getElementById("sidebar-email");
+        emailEl.textContent = links.email;
+        emailEl.href = `mailto:${links.email}`;
 
-    const emailEl = document.getElementById("sidebar-email");
-    emailEl.textContent = links.email;
-    emailEl.href = `mailto:${links.email}`;
+        const linkedinEl = document.getElementById("sidebar-linkedin");
+        linkedinEl.textContent = links.linkedin.replace("https://linkedin.com", "");
+        linkedinEl.href = links.linkedin;
 
-    const linkedinEl = document.getElementById("sidebar-linkedin");
-    linkedinEl.textContent = links.linkedin.replace("https://linkedin.com", "");
-    linkedinEl.href = links.linkedin;
+        const githubEl = document.getElementById("sidebar-github");
+        githubEl.textContent = links.github.replace("https://github.com", "");
+        githubEl.href = links.github;
+      }
 
-    const githubEl = document.getElementById("sidebar-github");
-    githubEl.textContent = links.github.replace("https://github.com", "");
-    githubEl.href = links.github;
-  }
+      function populateHero(cv) {
+        const { profile, experience, skills } = cv;
 
-  function populateHero(cv) {
-    const { profile, experience, skills } = cv;
+        // Hero
+        document.getElementById("hero-name").textContent = profile.name;
+        if (profile.bio) {
+          document.getElementById("hero-sub").textContent = profile.bio;
+        }
 
-    // Hero
-    document.getElementById("hero-name").textContent = profile.name;
-    if (profile.bio) {
-      document.getElementById("hero-sub").textContent = profile.bio;
-    }
+        // Tile "agora" — posição atual (endDate === null)
+        const current = experience.find(e => e.endDate === null);
+        if (current) {
+          document.getElementById("now-company").textContent = current.company;
+          document.getElementById("now-role").textContent = current.role;
+        }
 
-    // Tile "agora" — posição atual (endDate === null)
-    const current = experience.find(e => e.endDate === null);
-    if (current) {
-      document.getElementById("now-company").textContent = current.company;
-      document.getElementById("now-role").textContent    = current.role;
-    }
+        // Stack na statusbar — junta languages + platforms
+        const stack = [...skills.languages, ...skills.platforms].join(" • ");
+        document.getElementById("status-stack").textContent = stack;
 
-    // Stack na statusbar — junta languages + platforms
-    const stack = [...skills.languages, ...skills.platforms].join(" • ");
-    document.getElementById("status-stack").textContent = stack;
+        // Schema.org atualizado dinamicamente
+        const schema = document.getElementById("schema-org");
+        if (schema) {
+          const json = JSON.parse(schema.textContent);
+          json.name = profile.name;
+          json.jobTitle = profile.title;
+          json.sameAs = [profile.links.linkedin, profile.links.github];
+          schema.textContent = JSON.stringify(json, null, 2);
+        }
+      }
 
-    // Schema.org atualizado dinamicamente
-    const schema = document.getElementById("schema-org");
-    if (schema) {
-      const json = JSON.parse(schema.textContent);
-      json.name     = profile.name;
-      json.jobTitle = profile.title;
-      json.sameAs   = [profile.links.linkedin, profile.links.github];
-      schema.textContent = JSON.stringify(json, null, 2);
-    }
-  }
+      try {
+        const res = await fetch(CV_URL);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const cv = await res.json();
+        populateSidebar(cv.profile);
+        populateHero(cv);
+      } catch (err) {
+        console.error("[open-cv] falha ao carregar:", err);
+      }
+    })();
+  </script>
 
-  try {
-    const res = await fetch(CV_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const cv  = await res.json();
-    populateSidebar(cv.profile);
-    populateHero(cv);
-  } catch (err) {
-    console.error("[open-cv] falha ao carregar:", err);
-  }
-})();
-</script>
-
-<script type="application/ld+json" id="schema-org">
+  <script type="application/ld+json" id="schema-org">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -196,4 +207,5 @@ document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 
 </body>
+
 </html>
