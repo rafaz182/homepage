@@ -257,20 +257,20 @@
       { text: job.role || '',    fontSize: 9.5, bold: true, color: DARK },
       { text: job.company || '', fontSize: 9,   bold: true, color: BLUE, margin: [0, 1, 0, 1] },
       {
-        text: `${fmtDate(job.startDate)} - ${fmtDate(job.endDate)}     ${job.location || ''}`,
+        text: `${fmtDate(job.startDate)} - ${fmtDate(job.endDate)}     ${iconText(ICONS.pin, job.location || '')}`,
         fontSize: 7.5, color: MUTED, margin: [0, 0, 0, 2]
       }
     ];
     if (job.companyDescription) {
-      stack.push({ text: job.companyDescription, fontSize: 7.5, color: '#444', margin: [0, 0, 0, 2], lineHeight: 1.1 });
+      stack.push({ text: job.companyDescription, fontSize: 7.0, color: '#444', margin: [0, 0, 0, 2], lineHeight: 1.1 });
     }
     if (Array.isArray(job.highlights) && job.highlights.length) {
       stack.push({
-        ul: job.highlights.map(h => ({ text: h, fontSize: 7.5, color: '#222', lineHeight: 1.1 })),
+        ul: job.highlights.map(h => ({ text: h, fontSize: 7.0, color: '#222', lineHeight: 1.15 })),
         margin: [0, 1, 0, 0]
       });
     }
-    return { stack, margin: [0, 0, 0, isLast ? 0 : 4] };
+    return { stack, margin: [0, 0, 0, isLast ? 0 : 6] };
   }
 
   function educationBlock(edu) {
@@ -279,7 +279,7 @@
         { text: edu.studyType || edu.area || '', fontSize: 9.5, bold: true, color: DARK },
         { text: edu.institution || '', fontSize: 9, bold: true, color: BLUE, margin: [0, 1, 0, 1] },
         {
-          text: `${fmtDate(edu.startDate)} - ${fmtDate(edu.endDate)}     ${edu.location || ''}`,
+          text: `${fmtDate(edu.startDate)} - ${fmtDate(edu.endDate)}     ${iconText(ICONS.pin, edu.location || '')}`,
           fontSize: 7.5, color: MUTED
         }
       ],
@@ -443,10 +443,10 @@
     const body = {
       columns: [
         {
-          width: '63%',
+          width: '75%',
           stack: [
             sectionTitle('Experience'),
-            { text: 'Showing 5 most recent · full history at rafaz.dev/carreira', fontSize: 7, italics: true, color: MUTED, margin: [0, -2, 0, 4] },
+            { text: 'Showing 5 most recent · full history at rafaz.dev/carreira', fontSize: 6.5, italics: true, color: MUTED, margin: [0, -2, 0, 4] },
             ...recentWork.map((j, i) => workBlock(j, i === recentWork.length - 1))
           ]
         },
