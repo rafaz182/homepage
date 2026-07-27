@@ -9,7 +9,7 @@
     "profile": {
         "name": "Rafael P. Ramos",
         "handle": "rafaz-dev",
-        "title": "Sênior Android - Engineer/Arquiteto Mobile",
+        "title": "Sênior Android - Engenheiro/Arquiteto Mobile",
         "location": "São Paulo - SP, Brasil",
         "bio": "Software Engineer com mais de 10 anos de experiência especializada no ecossistema mobile, liderando arquiteturas escaláveis e a entrega de produtos de alto impacto em e-commerce, banking e sistemas automotivos embarcados (AAOS). Focado em balancear trade-offs técnicos — como performance, latência e manutenibilidade — alinhando decisões de engenharia aos objetivos estratégicos de negócio e eficiência operacional.",
         "interests": "Arquitetura orientada a Trade-offs, Concurrency avançada, Code Maintainability e Design Patterns. Atuo fortemente em liderança técnica e de pessoas, articulando soluções cross-functional entre engenharia (Mobile/Backend) e stakeholders de produto para garantir entregas resilientes e de alta qualidade.",
@@ -42,7 +42,7 @@
             "id": "asa-senior-flutter",
             "company": "ASA",
             "companyDescription": "ASA Investments — Multi-family office e gestora de recursos de alta renda",
-            "role": "Senior Mobile Engineer",
+            "role": "Engenheiro Mobile Sênior",
             "type": "fulltime",
             "startDate": "2025-11",
             "endDate": "2026-05",
@@ -68,7 +68,7 @@
         {
             "id": "alten-infotainment",
             "company": "ALTEN",
-            "role": "Infotainment System Developer",
+            "role": "Desenvolvedor Android Automotive",
             "type": "fulltime",
             "startDate": "2025-08",
             "endDate": "2025-11",
@@ -95,7 +95,7 @@
         {
             "id": "btg-associate-director",
             "company": "BTG Pactual",
-            "role": "Associate Director",
+            "role": "Líder Técnico Mobile",
             "type": "fulltime",
             "startDate": "2023-12",
             "endDate": "2025-07",
@@ -119,7 +119,7 @@
         {
             "id": "btg-it-analyst",
             "company": "BTG Pactual",
-            "role": "IT Analyst",
+            "role": "Engenheiro Mobile Sênior",
             "type": "fulltime",
             "startDate": "2020-02",
             "endDate": "2023-12",
@@ -188,7 +188,7 @@
         {
             "id": "mc1-junior",
             "company": "MC1",
-            "role": "Junior Software Engineer",
+            "role": "Engenheiro de Software Júnior",
             "type": "fulltime",
             "startDate": "2018-01",
             "endDate": "2018-12",
@@ -208,7 +208,7 @@
         {
             "id": "mc1-intern",
             "company": "MC1",
-            "role": "Software Engineer Intern",
+            "role": "Estagiário de Engenharia de Software",
             "type": "internship",
             "startDate": "2016-12",
             "endDate": "2017-12",
