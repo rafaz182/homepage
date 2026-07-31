@@ -1,292 +1,343 @@
 {
-    "$schema": "https://rafaz.dev/open-cv/schema.json",
-    "meta": {
-        "version": "1.1.5",
-        "updatedAt": "2026-05-20",
-        "locale": "pt-BR",
-        "source": "https://rafaz.dev/open-cv.json"
-    },
-    "profile": {
-        "name": "Rafael P. Ramos",
-        "handle": "rafaz-dev",
-        "title": "Sênior Android - Engenheiro/Arquiteto Mobile",
-        "location": "São Paulo - SP, Brasil",
-        "bio": "Software Engineer com mais de 10 anos de experiência especializada no ecossistema mobile, liderando arquiteturas escaláveis e a entrega de produtos de alto impacto em e-commerce, banking e sistemas automotivos embarcados (AAOS). Focado em balancear trade-offs técnicos — como performance, latência e manutenibilidade — alinhando decisões de engenharia aos objetivos estratégicos de negócio e eficiência operacional.",
-        "interests": "Arquitetura orientada a Trade-offs, Concurrency avançada, Code Maintainability e Design Patterns. Atuo fortemente em liderança técnica e de pessoas, articulando soluções cross-functional entre engenharia (Mobile/Backend) e stakeholders de produto para garantir entregas resilientes e de alta qualidade.",
-        "strengths": [
-            "Desenho de Arquiteturas Complexas e Escaláveis (Clean, MVVM, MVI)",
-            "Gestão de Trade-offs (Performance vs. Tempo de Entrega)",
-            "Sistemas de Caching robustos e Resiliência Offline",
-            "Liderança técnica, mentoria e facilitação cross-team",
-            "Otimização e Customização de UI/UX em cenários de alta concorrência"
-        ],
-        "avatar": "https://github.com/rafaz182.png",
-        "openToWork": false,
-        "links": {
-            "email": "rpereiraramos@gmail.com",
-            "linkedin": "https://linkedin.com/in/rafaz-dev",
-            "github": "https://github.com/rafaz182",
-            "website": "https://rafaz.dev"
-        },
-        "yearsOfExperience": 10,
-        "industries": [
-            "banking",
-            "fintech",
-            "e-commerce",
-            "automotive"
-        ],
-        "phone": "+55 11 970 745 053"
-    },
-    "experience": [
-        {
-            "id": "asa-senior-flutter",
-            "company": "ASA",
-            "companyDescription": "ASA Investments — Multi-family office e gestora de recursos de alta renda",
-            "role": "Engenheiro Mobile Sênior",
-            "type": "fulltime",
-            "startDate": "2025-11",
-            "endDate": "2026-05",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Responsável pela arquitetura, prototipagem e desenvolvimento do módulo core de Corretora/Home Broker, liderando a integração complexa via WebView/APIs com a infraestrutura da Nelogica para operações em tempo real na B3.",
-                "Implementação e gerenciamento de estado de uma das interfaces mais complexas do ecossistema: um dashboard financeiro de alta densidade composto por múltiplos gráficos simultâneos, listagens dinâmicas, paginação sob demanda e busca local otimizada.",
-                "Introdução de padrões rigorosos de gerenciamento de estado previsível utilizando Cubits, estabelecendo arquiteturas focadas em performance e eliminação de gargalos de re-renderização.",
-                "Atuação como guardião de qualidade de código através de Code Reviews focados em gerenciamento de memória (Memory Leaks), controle rígido do ciclo de vida de views declarativas e redução do overhead de mutação de estado."
-            ],
-            "tags": [
-                "Flutter",
-                "Dart",
-                "State Management (Bloc/Cubit)",
-                "Nelogica Integration",
-                "Home Broker Architecture",
-                "Performance Optimization",
-                "Declarative UI",
-                "Memory Management"
-            ]
-        },
-        {
-            "id": "alten-infotainment",
-            "company": "ALTEN",
-            "role": "Desenvolvedor Android Automotive",
-            "type": "fulltime",
-            "startDate": "2025-08",
-            "endDate": "2025-11",
-            "location": "Lund, Skåne County, Sweden",
-            "workMode": "onsite",
-            "highlights": [
-                "Engenheiro alocado na plataforma in-house da Volvo Cars com Android Automotive OS (AAOS)",
-                "Atuação nas plataformas ICUP, SPA1, SPA2 e SPA3 (arquiteturas DHU 1.1, IHU 4.0 e DHU 2.0 memory-enhanced)",
-                "Implementação seguindo padrões de UI do AAOS, incluindo Panels e Scalable UI",
-                "Camada de integração principal em Java; componentes SystemUI em Kotlin",
-                "Toda modificação de código acompanhada de testes unitários para garantir estabilidade",
-                "Gestão de workflow no Jira — documentando correções, bugs e registros de ocorrências",
-                "Análise de Android bugreports com milhares de linhas de log das camadas de hardware e sistema"
-            ],
-            "tags": [
-                "Android Automotive",
-                "AAOS",
-                "Java",
-                "Kotlin",
-                "Java Concurrency",
-                "Jira"
-            ]
-        },
-        {
-            "id": "btg-associate-director",
-            "company": "BTG Pactual",
-            "role": "Líder Técnico Mobile",
-            "type": "fulltime",
-            "startDate": "2023-12",
-            "endDate": "2025-07",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Liderança técnica e de pessoas de uma equipe multidisciplinar (9 engenheiros), gerenciando o ciclo completo de entrega de produtos.",
-                "Ponto focal estratégico atuando de forma próxima a stakeholders de Negócios e Operações, traduzindo requisitos de mercado em soluções técnicas escaláveis e de alta resiliência.",
-                "Responsável pela gestão de trade-offs de engenharia do ecossistema mobile, garantindo alta performance sob cenários de concorrência agressiva e mitigação de débitos técnicos.",
-                "Promoção da cultura de engenharia e intraempreendedorismo, atuando no desenvolvimento de carreiras, mentoria técnica avançada e facilitação de dinâmicas cross-functional."
-            ],
-            "tags": [
-                "Technical Leadership",
-                "Stakeholder Management",
-                "People Management",
-                "Cross-functional Leadership",
-                "Systems Architecture",
-                "Trade-off Analysis"
-            ]
-        },
-        {
-            "id": "btg-it-analyst",
-            "company": "BTG Pactual",
-            "role": "Engenheiro Mobile Sênior",
-            "type": "fulltime",
-            "startDate": "2020-02",
-            "endDate": "2023-12",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Arquitetou o app BTG Investimentos seguindo guidelines recomendadas pelo Google",
-                "Implementou features como Notifications, Deep Links e Analytics",
-                "Melhorou tempo de build ajustando scripts Gradle",
-                "Integração de SDK de reconhecimento facial"
-            ],
-            "tags": [
-                "Architecture",
-                "Gradle Tuning",
-                "Notifications",
-                "Deep Links",
-                "Analytics"
-            ]
-        },
-        {
-            "id": "mc1-android-engineer",
-            "company": "MC1",
-            "role": "Android Engineer",
-            "type": "fulltime",
-            "startDate": "2019-08",
-            "endDate": "2020-02",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Desenvolvedor principal do módulo core de 'Trade Marketing', sendo responsável por integrá-lo e estendê-lo dentro da engine proprietária de Server-Driven UI da companhia.",
-                "Atuação direta na concepção, desenho e desenvolvimento do SDK de Server-Driven UI da empresa, criando componentes de interface (Custom Views) altamente customizáveis e performáticos a partir do zero.",
-                "Liderança técnica na homologação e implantação bem-sucedida do novo ecossistema arquitetural no primeiro cliente enterprise da companhia, garantindo estabilidade e aderência técnica.",
-                "Foco rigoroso em padrões SOLID, Clean Architecture e componentização para mitigar o acoplamento e maximizar a reutilização de código entre diferentes tenants."
-            ],
-            "tags": [
-                "Server-Driven UI",
-                "Android",
-                "Kotlin",
-                "Java",
-                "Custom Views",
-                "SDK Development",
-                "Componentization",
-                "SOLID"
-            ]
-        },
-        {
-            "id": "itau-android-engineer",
-            "company": "Itaú Unibanco",
-            "role": "Android Engineer",
-            "type": "fulltime",
-            "startDate": "2018-12",
-            "endDate": "2019-08",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Apoio na adoção correta de MVVM",
-                "Execução de tarefas pesadas com Executor (Java API)",
-                "Implementação de SDKs de reconhecimento facial e OCR de documentos"
-            ],
-            "tags": [
-                "MVVM",
-                "Concurrency",
-                "OCR"
-            ]
-        },
-        {
-            "id": "mc1-junior",
-            "company": "MC1",
-            "role": "Engenheiro de Software Júnior",
-            "type": "fulltime",
-            "startDate": "2018-01",
-            "endDate": "2018-12",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Contribuiu no desenvolvimento de um SDK proprietário de Server-Driven UI",
-                "Construção de componentes de UI do zero",
-                "Apoio em implementação internacional — primeiro cliente no México"
-            ],
-            "tags": [
-                "UI Components",
-                "Server-Driven UI",
-                "International rollout"
-            ]
-        },
-        {
-            "id": "mc1-intern",
-            "company": "MC1",
-            "role": "Estagiário de Engenharia de Software",
-            "type": "internship",
-            "startDate": "2016-12",
-            "endDate": "2017-12",
-            "location": "São Paulo, BR",
-            "workMode": "onsite",
-            "highlights": [
-                "Base de engenharia e entrega de features em soluções mobile"
-            ],
-            "tags": [
-                "Android",
-                "Foundations"
-            ]
-        }
+  "$schema": "https://rafaz.dev/open-cv/schema.json",
+  "meta": {
+    "version": "1.3.0",
+    "updatedAt": "2026-07-30",
+    "locale": "pt-BR",
+    "source": "https://rafaz.dev/open-cv.json"
+  },
+  "profile": {
+    "name": "Rafael P. Ramos",
+    "handle": "rafaz-dev",
+    "title": "Engenheiro Android Sênior | Kotlin, Java, Arquitetura e Segurança",
+    "location": "São Paulo - SP, Brasil",
+    "bio": "Engenheiro Android Sênior com mais de 10 anos de experiência no desenvolvimento de aplicações mobile críticas nos setores financeiro, automotivo e de e-commerce. Especializado em Kotlin, Java, arquitetura mobile, concorrência, segurança, autenticação, gestão de sessão, comunicação em tempo real, performance e integração de SDKs e serviços. Experiência no ciclo completo de entrega Android, da implementação e testes à publicação na Google Play, evolução da plataforma, investigação de falhas e aplicação de correções de segurança.",
+    "interests": "Android e Android Automotive, Kotlin, Java, arquitetura mobile, concorrência, segurança de aplicações, autenticação e identidade, gestão de sessão, performance, observabilidade, resiliência offline e manutenibilidade de código.",
+    "strengths": [
+      "Desenvolvimento Android com Kotlin e Java",
+      "Arquitetura e evolução de aplicações mobile críticas",
+      "Segurança mobile, autenticação e proteção de dados",
+      "Concorrência, WebSockets e comunicação em tempo real",
+      "Gestão de sessão e comunicação segura entre aplicativos",
+      "Build, compatibilidade, testes e publicação na Google Play"
     ],
-    "skills": {
-        "languages": [
-            "Kotlin",
-            "Java",
-            "Dart"
-        ],
-        "platforms": [
-            "Android",
-            "Android Automotive",
-            "Flutter (Mobile/Web)"
-        ],
-        "architecture": [
-            "MVVM",
-            "Clean Architecture",
-            "Server-Driven UI",
-            "MVI",
-            "AAOS UI Patterns"
-        ],
-        "tools": [
-            "Gradle",
-            "Retrofit",
-            "Jetpack Compose",
-            "Coroutines",
-            "Flow",
-            "Jira"
-        ],
-        "practices": [
-            "Deep Links",
-            "Push Notifications",
-            "Analytics",
-            "OCR",
-            "Biometrics",
-            "Unit Testing"
-        ]
+    "avatar": "https://github.com/rafaz182.png",
+    "openToWork": false,
+    "links": {
+      "email": "rpereiraramos@gmail.com",
+      "linkedin": "https://linkedin.com/in/rafaz-dev",
+      "github": "https://github.com/rafaz182",
+      "website": "https://rafaz.dev"
     },
-    "education": [],
-    "certifications": [],
+    "yearsOfExperience": 10,
+    "industries": [
+      "banking",
+      "fintech",
+      "e-commerce",
+      "automotive"
+    ],
+    "phone": "+55 11 970 745 053"
+  },
+  "experience": [
+    {
+      "id": "asa-senior-flutter",
+      "company": "ASA",
+      "companyDescription": "ASA Investments — Multi-family office e gestora de recursos de alta renda",
+      "role": "Engenheiro Mobile Sênior",
+      "type": "fulltime",
+      "startDate": "2025-11",
+      "endDate": "2026-05",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Projetei, prototipei e desenvolvi o módulo core de Corretora/Home Broker, integrando a aplicação à infraestrutura da Nelogica por meio de WebView e APIs para operações em tempo real na B3.",
+        "Implementei um dashboard financeiro com múltiplos gráficos simultâneos, listagens dinâmicas, paginação sob demanda e busca local.",
+        "Estruturei o gerenciamento de estado com Bloc/Cubit para isolar atualizações de interface, manter fluxos previsíveis e reduzir reconstruções desnecessárias.",
+        "Realizei code reviews com foco em gerenciamento de memória, ciclo de vida de interfaces declarativas e controle de mutações de estado."
+      ],
+      "tags": [
+        "Flutter",
+        "Dart",
+        "Bloc/Cubit",
+        "Nelogica",
+        "Home Broker",
+        "Declarative UI",
+        "State Management",
+        "Memory Management"
+      ]
+    },
+    {
+      "id": "alten-infotainment",
+      "company": "ALTEN",
+      "role": "Desenvolvedor Android Automotive",
+      "type": "fulltime",
+      "startDate": "2025-08",
+      "endDate": "2025-11",
+      "location": "Lund, Skåne County, Sweden",
+      "workMode": "onsite",
+      "highlights": [
+        "Atuei na plataforma in-house de infotainment da Volvo Cars baseada em Android Automotive OS (AAOS).",
+        "Implementei e mantive componentes para as plataformas ICUP, SPA1, SPA2 e SPA3, abrangendo as arquiteturas DHU 1.1, IHU 4.0 e DHU 2.0 memory-enhanced.",
+        "Desenvolvi integrações na camada principal em Java e componentes de SystemUI em Kotlin, seguindo padrões de interface do AAOS, incluindo Panels e Scalable UI.",
+        "Adicionei testes unitários às modificações de código para reduzir regressões e preservar a estabilidade entre diferentes plataformas.",
+        "Investiguei falhas por meio de Android bugreports, correlacionando logs das camadas de aplicação, framework, sistema e hardware.",
+        "Documentei correções, bugs e evidências técnicas no Jira durante o ciclo de investigação e entrega."
+      ],
+      "tags": [
+        "Android Automotive",
+        "AAOS",
+        "Java",
+        "Kotlin",
+        "SystemUI",
+        "Java Concurrency",
+        "Unit Testing",
+        "Android Bugreport"
+      ]
+    },
+    {
+      "id": "btg-associate-director",
+      "company": "BTG Pactual",
+      "role": "Especialista em Engenharia Mobile",
+      "type": "fulltime",
+      "startDate": "2023-12",
+      "endDate": "2025-07",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Atuei como principal referência técnica Android de uma equipe com nove engenheiros durante a transição do produto para a fase de manutenção e evolução, auditando novas soluções e preservando as decisões da arquitetura-base.",
+        "Exerci o papel de gatekeeper técnico por meio da revisão de pull requests, identificando desvios arquiteturais, riscos de manutenção e problemas de implementação antes da integração ao código principal.",
+        "Coordenei tecnicamente o ciclo de publicação Android: organização do Gitflow, geração do Android App Bundle, preparação de releases e submissão à Google Play. Também tratei exigências de revisão, como fornecimento de credenciais e instruções de teste, adequação de informações do aplicativo, declarações de conteúdo e privacidade, compatibilidade com o target SDK e correções solicitadas pela plataforma.",
+        "Atuei como desenvolvedor focal de segurança em parceria com o Red Team, analisando resultados de testes e aplicando correções como bloqueio de capturas de tela em fluxos sensíveis, criptografia de dados persistidos e reforço das camadas de comunicação entre o aplicativo e o backend.",
+        "Desenvolvi jornadas de transações, investimentos offshore, câmbio e autenticação, convertendo especificações de UX em telas Android, navegação, integração com modelos e rotas de backend, testes unitários e testes instrumentados.",
+        "Projetei e implementei uma stack de WebSocket sobre OkHttp para um protocolo proprietário. Em conjunto com a área de Renda Variável, mapeei o fluxo de comunicação e viabilizei a listagem e atualização de ações em tempo real no aplicativo.",
+        "Evoluí a stack de login e sessão, incluindo configurações client-side e fluxos de compartilhamento de tokens entre aplicativos do ecossistema BTG por meio de mecanismos nativos do Android, como BroadcastReceiver e ContentProvider.",
+        "Criei uma ferramenta interna de diagnóstico acessada por uma floating bubble, com uma central de configurações baseada em reflection. A solução permitia inspecionar requisições REST — status, payloads e headers — testar notificações e deep links e alternar configurações de white-label em runtime.",
+        "Mantive a camada de plataforma exclusiva do Android, conduzindo atualizações de SDKs nativos, Android Gradle Plugin, Gradle e Kotlin, além de corrigir incompatibilidades, falhas de build e gargalos que afetavam o ciclo de desenvolvimento da equipe.",
+        "Apoiei iniciativas de evolução técnica fora do fluxo principal do produto, incluindo automação de testes mobile com Appium e criação e compartilhamento de SDKs reutilizáveis com outras equipes mobile do banco."
+      ],
+      "tags": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Mobile Architecture",
+        "Code Review",
+        "Google Play Console",
+        "Android App Bundle",
+        "Application Security",
+        "OkHttp",
+        "WebSocket",
+        "Authentication",
+        "Session Management",
+        "BroadcastReceiver",
+        "ContentProvider",
+        "Reflection",
+        "Appium",
+        "Gradle",
+        "Unit Testing",
+        "Instrumented Testing"
+      ]
+    },
+    {
+      "id": "btg-it-analyst",
+      "company": "BTG Pactual",
+      "role": "Engenheiro Mobile Sênior",
+      "type": "fulltime",
+      "startDate": "2020-02",
+      "endDate": "2023-12",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Defini e evoluí a arquitetura do aplicativo BTG Investimentos com base nas recomendações da plataforma Android, priorizando separação de responsabilidades e manutenibilidade.",
+        "Implementei funcionalidades de push notifications, deep links e analytics, conectando jornadas do aplicativo a serviços externos e mecanismos de mensuração.",
+        "Otimizei scripts e configurações Gradle para reduzir o tempo de build e melhorar o ciclo local de desenvolvimento.",
+        "Integrei um SDK de reconhecimento facial aos fluxos mobile, tratando sua incorporação à arquitetura e às jornadas existentes."
+      ],
+      "tags": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Mobile Architecture",
+        "Gradle",
+        "Push Notifications",
+        "Deep Links",
+        "Analytics",
+        "Facial Recognition"
+      ]
+    },
+    {
+      "id": "mc1-android-engineer",
+      "company": "MC1",
+      "role": "Android Engineer",
+      "type": "fulltime",
+      "startDate": "2019-08",
+      "endDate": "2020-02",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Desenvolvi o módulo core de Trade Marketing e o integrei à engine proprietária de Server-Driven UI da companhia.",
+        "Participei da concepção e do desenvolvimento do SDK de Server-Driven UI, criando Custom Views reutilizáveis e configuráveis a partir do zero.",
+        "Conduzi a homologação e a implantação do novo ecossistema arquitetural no primeiro cliente enterprise da solução.",
+        "Apliquei SOLID, Clean Architecture e componentização para reduzir acoplamento e ampliar o reaproveitamento de código entre diferentes tenants."
+      ],
+      "tags": [
+        "Android",
+        "Kotlin",
+        "Java",
+        "Server-Driven UI",
+        "Custom Views",
+        "SDK Development",
+        "Clean Architecture",
+        "SOLID",
+        "Componentization"
+      ]
+    },
+    {
+      "id": "itau-android-engineer",
+      "company": "Itaú Unibanco",
+      "role": "Android Engineer",
+      "type": "fulltime",
+      "startDate": "2018-12",
+      "endDate": "2019-08",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Contribuí para a adoção de MVVM em funcionalidades Android, reforçando a separação entre interface, estado e regras de aplicação.",
+        "Implementei processamento assíncrono para tarefas intensivas utilizando a API Executor do Java.",
+        "Integrei SDKs de reconhecimento facial e OCR de documentos às jornadas do aplicativo."
+      ],
+      "tags": [
+        "Android",
+        "Java",
+        "MVVM",
+        "Concurrency",
+        "Executor",
+        "Facial Recognition",
+        "OCR"
+      ]
+    },
+    {
+      "id": "mc1-junior",
+      "company": "MC1",
+      "role": "Engenheiro de Software Júnior",
+      "type": "fulltime",
+      "startDate": "2018-01",
+      "endDate": "2018-12",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Contribuí para o desenvolvimento de um SDK proprietário de Server-Driven UI para aplicações Android.",
+        "Desenvolvi componentes de interface customizados e reutilizáveis a partir do zero.",
+        "Apoiei a implantação internacional da solução no primeiro cliente da companhia no México."
+      ],
+      "tags": [
+        "Android",
+        "Java",
+        "Server-Driven UI",
+        "Custom Views",
+        "SDK Development",
+        "International Rollout"
+      ]
+    },
+    {
+      "id": "mc1-intern",
+      "company": "MC1",
+      "role": "Estagiário de Engenharia de Software",
+      "type": "internship",
+      "startDate": "2016-12",
+      "endDate": "2018-01",
+      "location": "São Paulo, BR",
+      "workMode": "onsite",
+      "highlights": [
+        "Implementei funcionalidades e correções em soluções mobile, consolidando fundamentos de desenvolvimento Android e entrega de software."
+      ],
+      "tags": [
+        "Android",
+        "Java",
+        "Mobile Development",
+        "Software Engineering"
+      ]
+    }
+  ],
+  "skills": {
     "languages": [
-        {
-            "language": "Português",
-            "level": "native"
-        },
-        {
-            "language": "Inglês",
-            "level": "full professional"
-        }
+      "Kotlin",
+      "Java",
+      "Dart"
     ],
-    "seo": {
-        "ogTitle": "Rafael Ramos — Senior Android & Flutter Developer",
-        "ogDescription": "Senior Android Developer especializado em Kotlin, arquitetura e performance.",
-        "ogImage": "https://rafaz.dev/assets/preview.png",
-        "schemaJobTitle": "Senior Android Developer"
-    },
-    "projects": [
-        {
-            "id": "open-cv",
-            "name": "Open CV",
-            "description": "Schema JSON público para centralizar trajetória profissional, consumido por website e app.",
-            "url": "https://rafaz.dev/open-cv.json",
-            "tags": [
-                "open-source",
-                "JSON",
-                "GitHub Pages"
-            ]
-        }
+    "platforms": [
+      "Android",
+      "Android Automotive OS (AAOS)",
+      "Flutter (Mobile/Web)"
+    ],
+    "architecture": [
+      "MVVM",
+      "MVI",
+      "Clean Architecture",
+      "Server-Driven UI",
+      "Modularização",
+      "AAOS UI Patterns"
+    ],
+    "tools": [
+      "Gradle",
+      "Jetpack Compose",
+      "Coroutines",
+      "Flow",
+      "Retrofit",
+      "Bloc/Cubit",
+      "Jira",
+      "OkHttp",
+      "Google Play Console",
+      "Android App Bundle",
+      "Appium"
+    ],
+    "practices": [
+      "Unit Testing",
+      "Code Review",
+      "Deep Links",
+      "Push Notifications",
+      "Analytics",
+      "Biometrics",
+      "OCR",
+      "Performance Analysis",
+      "Memory Management",
+      "Instrumented Testing",
+      "Application Security",
+      "Release Management",
+      "WebSockets",
+      "Network Debugging",
+      "Secure Storage",
+      "Inter-app Communication"
     ]
+  },
+  "education": [],
+  "certifications": [],
+  "languages": [
+    {
+      "language": "Português",
+      "level": "native"
+    },
+    {
+      "language": "Inglês",
+      "level": "full professional"
+    }
+  ],
+  "seo": {
+    "ogTitle": "Rafael Ramos — Engenheiro Android Sênior",
+    "ogDescription": "Engenheiro Android Sênior especializado em Kotlin, Java, arquitetura, segurança, comunicação em tempo real e entrega de aplicações mobile.",
+    "ogImage": "https://rafaz.dev/assets/preview.png",
+    "schemaJobTitle": "Senior Android Engineer"
+  },
+  "projects": [
+    {
+      "id": "open-cv",
+      "name": "Open CV",
+      "description": "Schema JSON público para centralizar trajetória profissional, consumido por website e app.",
+      "url": "https://rafaz.dev/open-cv.json",
+      "tags": [
+        "open-source",
+        "JSON",
+        "GitHub Pages"
+      ]
+    }
+  ]
 }
